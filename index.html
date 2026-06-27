@@ -353,7 +353,7 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
 
 <header class="nav" id="siteNav">
   <div class="nav-in">
-    <a href="#top" class="brand">
+    <a href="index.html" class="brand">
       <svg class="mark" viewBox="0 0 34 40" fill="none">
         <path d="M3 38V18C3 9 9.5 2 17 2s14 7 14 16v20" stroke="#BE9B4E" stroke-width="2"/>
         <path d="M9 38V20c0-5 3.6-9 8-9s8 4 8 9v18" stroke="#103D31" stroke-width="2"/>
@@ -362,13 +362,13 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
       <span class="lab"><b>Imam Sherif</b><span>Stafford, Virginia</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#top" data-sec="top">Home</a>
-      <a href="#about" data-sec="about">About Us</a>
-      <a href="#services" data-sec="services">Services</a>
-      <a href="#imam" data-sec="imam">Get to Know the Imam</a>
-      <a href="#visit" data-sec="visit">Where to Find Us</a>
-      <a href="#contact" data-sec="contact">Contact Us</a>
-      <a href="#book" class="btn btn-gold" style="padding:.6rem 1.2rem">Book a Meeting</a>
+      <a href="index.html" class="on">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="imam.html">Get to Know the Imam</a>
+      <a href="visit.html">Where to Find Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="book.html" class="btn btn-gold" style="padding:.6rem 1.2rem">Book a Meeting</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#103D31" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -385,8 +385,8 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
       <h1>Sit and speak<br>with <em>Imam Sherif</em></h1>
       <p class="lead">Book a private meeting for counseling, guidance, a nikah, or a question of faith — at a time that works for you.</p>
       <div class="hero-cta">
-        <a href="#book" class="btn btn-gold">Book an Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#imam" class="btn btn-light">About the Imam</a>
+        <a href="book.html" class="btn btn-gold">Book an Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="imam.html" class="btn btn-light">About the Imam</a>
       </div>
     </div>
     <div class="hero-figure reveal">
@@ -498,7 +498,7 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Fluent in English, Arabic &amp; German</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Studied law &amp; Hadith</span>
         </div>
-        <a href="#book" class="btn btn-gold" style="margin-top:4px">Book a meeting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="book.html" class="btn btn-gold" style="margin-top:4px">Book a meeting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -603,7 +603,7 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
       </div>
     </div>
     <div class="contact-actions reveal">
-      <a href="#book" class="btn btn-gold">Book an Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="book.html" class="btn btn-gold">Book an Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="mailto:imamsherifshehata@gmail.com" class="btn btn-ghost">Email the office</a>
     </div>
     <div class="contact-social reveal">
@@ -644,10 +644,12 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
     </div>
     <div>
       <h4>Explore</h4>
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#imam">Get to Know the Imam</a>
-      <a href="#book">Book a meeting</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="imam.html">Get to Know the Imam</a>
+      <a href="visit.html">Where to Find Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="book.html">Book a meeting</a>
     </div>
     <div>
       <h4>Contact</h4>
@@ -723,18 +725,6 @@ function svcArch(inner){return '<svg viewBox="0 0 64 64" fill="none"><path d="M8
       a.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');});
     });
   }
-  /* scrollspy: highlight current section in the menu */
-  var ids=['top','about','services','imam','book','visit','contact'];
-  function spy(){
-    var pos=window.scrollY+130, cur='top';
-    ids.forEach(function(id){var el=document.getElementById(id); if(el && el.offsetTop<=pos) cur=id;});
-    document.querySelectorAll('.nav-links a[data-sec]').forEach(function(a){
-      a.classList.toggle('on', a.getAttribute('data-sec')===cur);
-    });
-  }
-  window.addEventListener('scroll',spy,{passive:true});
-  window.addEventListener('resize',spy);
-  spy();
 })();
 </script>
 <script>
