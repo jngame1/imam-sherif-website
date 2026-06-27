@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get to Know the Imam · Imam Sherif — Stafford, VA</title>
+<meta name="description" content="Imam Sherif Shehata — resident imam of Masjid Aliya since 2010, chaplain to Stafford Fire & Rescue and the Sheriff's Office, and a neighbor to all.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Imam Sherif — imam.html
+   ============================================================ */
+:root{
+  --green:#103D31; --green-2:#1B5C49; --green-soft:#E6EFE9;
+  --sand:#F5EFE2; --sand-2:#EFE7D5; --cream:#FCF9F1;
+  --gold:#BE9B4E; --gold-d:#9A7C36;
+  --ink:#22302A; --ink-soft:#5C665F; --line:#E2D9C4;
+  --shadow:0 18px 40px -24px rgba(16,61,49,.45);
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.08;color:var(--green)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:'Mulish';font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);display:inline-block}
+.center{text-align:center}
+.btn{font-family:'Mulish';font-weight:700;font-size:.92rem;letter-spacing:.02em;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;border:none;padding:.85rem 1.6rem;border-radius:999px;transition:.25s ease}
+.btn svg{width:16px;height:16px}
+.btn-gold{background:var(--gold);color:#241c06}
+.btn-gold:hover{background:var(--gold-d);color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn-ghost:hover{background:var(--green);color:var(--sand)}
+.btn-light{background:transparent;color:var(--sand);border:1.5px solid rgba(245,239,226,.4)}
+.btn-light:hover{background:var(--sand);color:var(--green)}
+
+/* star pattern */
+.stars{position:absolute;inset:0;opacity:.06;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23103D31' stroke-width='1.1'%3E%3Cpath d='M40 6 49 31 74 40 49 49 40 74 31 49 6 40 31 31z'/%3E%3Cpath d='M40 16 46 34 64 40 46 46 40 64 34 46 16 40 34 34z'/%3E%3C/g%3E%3C/svg%3E")}
+.stars.gold{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23BE9B4E' stroke-width='1.1'%3E%3Cpath d='M40 6 49 31 74 40 49 49 40 74 31 49 6 40 31 31z'/%3E%3Cpath d='M40 16 46 34 64 40 46 46 40 64 34 46 16 40 34 34z'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* ---------- nav ---------- */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--maxw);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:34px;height:40px;flex:none}
+.brand b{font-family:'Cormorant Garamond';font-weight:700;font-size:1.45rem;color:var(--green);line-height:1}
+.brand .lab span{display:block;font-family:'Mulish';font-weight:600;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:19px}
+.nav-links a{font-weight:600;font-size:.86rem;color:var(--ink);transition:.2s;position:relative;white-space:nowrap}
+.nav-links a:hover{color:var(--gold-d)}
+.nav-links a.on{color:var(--green)}
+.nav-links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer}
+
+/* ---------- page hero ---------- */
+.phero{background:var(--green);position:relative;overflow:hidden}
+.phero .stars{opacity:.09}
+.phero-in{position:relative;max-width:var(--maxw);margin:0 auto;padding:80px 28px 72px;text-align:center}
+.phero .eyebrow{color:var(--gold)}
+.phero h1{color:var(--sand);font-size:clamp(2.4rem,5vw,3.6rem);margin:.4rem auto .6rem}
+.phero p{color:#cdd9d2;max-width:52ch;margin:0 auto;font-size:1.08rem}
+
+/* ---------- sections ---------- */
+section{padding:88px 0}
+.sec-head{max-width:640px;margin-bottom:46px}
+.sec-head.mid{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin:.5rem 0 .8rem}
+.sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+/* ---------- bio split ---------- */
+.bio-section{background:linear-gradient(180deg,#ffffff 0%,#FCF7EC 100%)}
+.bio-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.bio-grid .copy .eyebrow{margin-bottom:6px}
+.bio-grid h2{font-size:clamp(2.1rem,4vw,3rem);margin-bottom:18px;color:#0C463A}
+.bio-grid .copy p{margin-bottom:1.1rem;color:#1E2A24;font-size:1.06rem;line-height:1.74}
+.bio-grid .copy p.big{font-family:'Cormorant Garamond';font-size:1.65rem;color:var(--green);line-height:1.4;font-weight:600;font-style:italic;border-left:3px solid var(--gold);padding-left:20px;margin:22px 0}
+.bio-portrait{display:flex;justify-content:center;position:relative}
+
+/* arch photo frame */
+.arch-frame{position:relative;width:min(360px,90%);aspect-ratio:3/4.1;
+  background:linear-gradient(180deg,var(--green-2),#0c2e25);border:2px solid var(--gold);
+  border-radius:50% 50% 14px 14px / 42% 42% 14px 14px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.arch-frame .ph-inner{text-align:center;padding:30px;color:var(--gold)}
+.arch-frame .ph-inner svg{width:54px;height:54px;margin-bottom:16px;opacity:.9}
+.arch-frame .ph-inner p{color:#aabfb4;font-size:.9rem;font-weight:600;letter-spacing:.06em;margin-top:8px}
+.arch-frame .ph-inner small{display:block;color:#7d9e8c;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+
+/* facts pills */
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
+.facts span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.84rem;font-weight:600;color:var(--green)}
+.facts span svg{width:15px;height:15px;color:var(--gold-d);flex:none}
+
+/* ---------- education ---------- */
+.edu-section{background:var(--sand-2)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:46px}
+.edu-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:36px 30px;position:relative;overflow:hidden;transition:.28s}
+.edu-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold)}
+.edu-card .edu-icon{width:52px;height:52px;border-radius:14px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);margin-bottom:18px}
+.edu-card .edu-icon svg{width:28px;height:28px}
+.edu-card .edu-tag{font-family:'Mulish';font-weight:700;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px;display:block}
+.edu-card h3{font-size:1.55rem;margin-bottom:6px;color:var(--green)}
+.edu-card .sub{font-size:.84rem;font-weight:700;color:var(--ink-soft);margin-bottom:14px}
+.edu-card p{color:var(--ink-soft);font-size:.95rem;line-height:1.65}
+.edu-card .corner{position:absolute;bottom:-22px;right:-22px;width:90px;height:90px;border-radius:50%;background:rgba(190,155,78,.07)}
+
+/* ---------- chaplaincy ---------- */
+.chap-section{background:var(--cream)}
+.chap-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:46px}
+.chap-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.28s}
+.chap-card:hover{box-shadow:var(--shadow);border-color:var(--gold)}
+.chap-photo{position:relative;background:var(--sand-2);border-bottom:2px dashed var(--gold);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:var(--gold-d)}
+.chap-photo svg{width:48px;height:48px;opacity:.6}
+.chap-photo .ph-lbl{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.chap-body{padding:30px 28px}
+.chap-body .badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:var(--green);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.chap-body .badge svg{width:13px;height:13px}
+.chap-body h3{font-size:1.6rem;margin-bottom:10px}
+.chap-body p{color:var(--ink-soft);font-size:.96rem;line-height:1.68;margin-bottom:10px}
+.chap-body .since{font-size:.82rem;font-weight:700;color:var(--gold-d);letter-spacing:.06em}
+
+/* ---------- community ---------- */
+.community-section{background:var(--green);position:relative;overflow:hidden}
+.community-section .stars{opacity:.08}
+.community-section .sec-head .eyebrow{color:var(--gold)}
+.community-section .sec-head h2{color:var(--sand)}
+.community-section .sec-head p{color:#cdd9d2}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px;position:relative}
+.stat-box{background:rgba(255,255,255,.07);border:1px solid rgba(190,155,78,.25);border-radius:16px;padding:34px 24px;text-align:center;transition:.28s}
+.stat-box:hover{background:rgba(255,255,255,.11);border-color:rgba(190,155,78,.5)}
+.stat-box .num{font-family:'Cormorant Garamond';font-size:3.2rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:6px}
+.stat-box p{color:#cdd9d2;font-size:.92rem;line-height:1.45}
+.community-note{position:relative;text-align:center;max-width:62ch;margin:44px auto 0;color:#d8e4dd;font-size:1.08rem;line-height:1.75}
+
+/* ---------- CTA ---------- */
+.cta-section{background:var(--sand);padding:88px 0}
+.cta-inner{max-width:620px;margin:0 auto;text-align:center}
+.cta-inner .eyebrow{margin-bottom:10px}
+.cta-inner h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:14px}
+.cta-inner p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:30px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- footer ---------- */
+footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
+.foot-in{position:relative;max-width:var(--maxw);margin:0 auto;padding:60px 28px 28px;display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:40px}
+.foot-in h4{font-family:'Cormorant Garamond';color:var(--sand);font-size:1.4rem;margin-bottom:14px}
+.foot-in .brand b{color:var(--sand)}
+.foot-in p{font-size:.92rem;margin-bottom:8px}
+.foot-in a{color:#cdd9d2;font-size:.92rem;display:block;margin-bottom:8px;transition:.2s}
+.foot-in a:hover{color:var(--gold)}
+.socials{display:flex;gap:12px;margin-top:6px}
+.socials a{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;border:1px solid rgba(190,155,78,.35);color:var(--sand);margin:0;transition:.22s}
+.socials a:hover{background:var(--gold);color:var(--green);border-color:var(--gold);transform:translateY(-3px)}
+.socials svg{width:20px;height:20px}
+.foot-bottom{position:relative;border-top:1px solid rgba(190,155,78,.25);margin-top:30px;padding:20px 28px;text-align:center;font-size:.82rem;color:#9fb1a8;max-width:var(--maxw);margin-left:auto;margin-right:auto}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* mobile menu */
+@media(max-width:1000px){
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+  header.nav.open .nav-links{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:100%;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--line);padding:6px 18px 16px;box-shadow:var(--shadow)}
+  header.nav.open .nav-links a{padding:13px 4px;border-bottom:1px solid var(--line);font-size:1rem;color:var(--green)}
+  header.nav.open .nav-links a:last-child{border-bottom:none}
+  header.nav.open .nav-links a.on::after{display:none}
+  header.nav.open .nav-links a.btn{margin-top:12px;justify-content:center;background:var(--gold);color:#241c06}
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:880px){
+  .bio-grid{grid-template-columns:1fr;gap:36px}
+  .bio-portrait{max-width:340px;margin:0 auto}
+  .edu-grid,.chap-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .foot-in{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:520px){
+  .stats-row{grid-template-columns:1fr}
+  .facts{gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="siteNav">
+  <div class="nav-in">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 34 40" fill="none">
+        <path d="M3 38V18C3 9 9.5 2 17 2s14 7 14 16v20" stroke="#BE9B4E" stroke-width="2"/>
+        <path d="M9 38V20c0-5 3.6-9 8-9s8 4 8 9v18" stroke="#103D31" stroke-width="2"/>
+        <circle cx="17" cy="6.5" r="1.8" fill="#BE9B4E"/>
+      </svg>
+      <span class="lab"><b>Imam Sherif</b><span>Stafford, Virginia</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="imam.html" class="on">Get to Know the Imam</a>
+      <a href="visit.html">Where to Find Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="book.html" class="btn btn-gold" style="padding:.6rem 1.2rem">Book a Meeting</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#103D31" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="phero">
+  <div class="stars gold"></div>
+  <div class="phero-in">
+    <span class="eyebrow reveal">The man behind the door</span>
+    <h1 class="reveal">Get to Know Imam Sherif</h1>
+    <p class="reveal">Chaplain, counselor, and resident imam — serving Stafford since 2010.</p>
+  </div>
+</section>
+
+<!-- BIO SPLIT -->
+<section class="bio-section">
+  <div class="wrap">
+    <div class="bio-grid">
+      <div class="bio-portrait reveal">
+        <div class="arch-frame">
+          <div class="ph-inner">
+            <!-- Mosque / crescent SVG -->
+            <svg viewBox="0 0 64 64" fill="none" stroke="#BE9B4E" stroke-width="1.5">
+              <!-- dome -->
+              <path d="M12 40 C12 24 52 24 52 40" stroke-linejoin="round"/>
+              <!-- minaret left -->
+              <rect x="6" y="28" width="8" height="24" rx="1"/>
+              <path d="M6 28 C6 22 14 22 14 28"/>
+              <!-- minaret right -->
+              <rect x="50" y="28" width="8" height="24" rx="1"/>
+              <path d="M50 28 C50 22 58 22 58 28"/>
+              <!-- crescent -->
+              <path d="M30 10 A9 9 0 1 0 30 28 A6 6 0 1 1 30 10Z" fill="#BE9B4E" stroke="none"/>
+              <!-- base line -->
+              <line x1="4" y1="52" x2="60" y2="52"/>
+              <!-- door -->
+              <path d="M26 52 L26 42 Q32 36 38 42 L38 52Z"/>
+            </svg>
+            <p>Photo — Imam Sherif</p>
+            <small>Portrait coming soon</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="copy reveal">
+        <span class="eyebrow">Background</span>
+        <h2>A scholar, chaplain,<br>and neighbor</h2>
+
+        <p>Imam Sherif Shehata has served as resident imam of Masjid Aliya in Stafford, Virginia since 2010. In that time he has led thousands of prayers, delivered hundreds of khutbahs, and walked with countless families through their most significant moments — births, marriages, losses, and questions of faith.</p>
+
+        <p class="big">"Every door I open is an invitation. Whether you are Muslim or not, whether you have a question or a burden — you are welcome here."</p>
+
+        <p>Beyond the masjid, he serves as chaplain to Stafford Fire &amp; Rescue (since 2019) and the Stafford County Sheriff's Office — bringing pastoral care to first responders and those in crisis. He also serves on the Stafford Diversity Advisory Coalition (Vice President) and the Faith Leaders Advisory Committee.</p>
+
+        <div class="facts">
+          <span>
+            <!-- mosque -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V13c0-4 4-7 8-7s8 3 8 7v8"/><path d="M9 21v-5c0-1.5 1.3-3 3-3s3 1.5 3 3v5"/><path d="M2 21h20"/><path d="M10 6A2 2 0 1 1 14 6"/></svg>
+            Imam since 2010
+          </span>
+          <span>
+            <!-- shield -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Fire &amp; Rescue Chaplain
+          </span>
+          <span>
+            <!-- badge -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            Sheriff's Chaplain
+          </span>
+          <span>
+            <!-- globe -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            English · Arabic · German
+          </span>
+          <span>
+            <!-- book -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Al-Azhar · Ain Shams
+          </span>
+        </div>
+
+        <a href="book.html" class="btn btn-gold">Book a Meeting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="edu-section">
+  <div class="wrap">
+    <div class="sec-head mid reveal">
+      <span class="eyebrow">Formation</span>
+      <h2>Education &amp; Training</h2>
+      <p>Grounded in two of Egypt's most distinguished institutions of Islamic scholarship.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="edu-tag">Cairo, Egypt · Est. 970 AD</span>
+        <h3>Al-Azhar University</h3>
+        <div class="sub">Hadith &amp; Islamic Sciences</div>
+        <p>Al-Azhar is one of the oldest and most respected institutions of Islamic learning in the world — and the foundation of Imam Sherif's scholarly formation. His studies in Hadith provided deep roots in prophetic tradition and the science of narration.</p>
+        <div class="corner"></div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="13" y2="13"/></svg>
+        </div>
+        <span class="edu-tag">Cairo, Egypt</span>
+        <h3>Ain Shams University</h3>
+        <div class="sub">Islamic Law (Sharia)</div>
+        <p>Ain Shams brought the rigor of legal reasoning to his practice. This training in Islamic jurisprudence underpins his guidance on matters of marriage, family, contracts, and religious practice — offered with care, not just certainty.</p>
+        <div class="corner"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPLAINCY WORK -->
+<section class="chap-section">
+  <div class="wrap">
+    <div class="sec-head mid reveal">
+      <span class="eyebrow">Public Service</span>
+      <h2>Chaplaincy Beyond the Masjid</h2>
+      <p>Pastoral care where it's needed most — in crisis, in grief, and in service.</p>
+    </div>
+    <div class="chap-grid">
+      <div class="chap-card reveal">
+        <div class="chap-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.8"/><rect x="2" y="3" width="20" height="18" rx="3"/></svg>
+          <span class="ph-lbl">Photo — Fire &amp; Rescue Service</span>
+        </div>
+        <div class="chap-body">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Chaplain
+          </span>
+          <h3>Chaplain to Stafford Fire &amp; Rescue</h3>
+          <p>First responders carry weight that most people never see. Imam Sherif serves as chaplain to Stafford Fire &amp; Rescue — providing emotional and spiritual support to firefighters and EMS personnel, facilitating critical incident stress debriefings, and walking alongside families during their hardest hours.</p>
+          <p>When a call goes wrong, he's the one who helps people process what happened — regardless of their faith tradition.</p>
+          <span class="since">Serving since 2019</span>
+        </div>
+      </div>
+      <div class="chap-card reveal">
+        <div class="chap-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.8"/><rect x="2" y="3" width="20" height="18" rx="3"/></svg>
+          <span class="ph-lbl">Photo — Sheriff's Office Service</span>
+        </div>
+        <div class="chap-body">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+            Chaplain
+          </span>
+          <h3>Chaplain to the Stafford County Sheriff's Office</h3>
+          <p>In partnership with the Stafford County Sheriff's Office, Imam Sherif provides chaplaincy to law enforcement officers, people in detention, and families navigating the justice system.</p>
+          <p>His presence bridges gaps — offering counsel, dignity, and a steady voice in places where those things are often hard to find.</p>
+          <span class="since">Serving Stafford County Law Enforcement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY INVOLVEMENT -->
+<section class="community-section">
+  <div class="stars gold"></div>
+  <div class="wrap">
+    <div class="sec-head mid reveal">
+      <span class="eyebrow">Community</span>
+      <h2>Rooted in Stafford</h2>
+      <p>Faith in action — across languages, agencies, and communities.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box reveal">
+        <div class="num">15+</div>
+        <p>Years serving Stafford,<br>Virginia</p>
+      </div>
+      <div class="stat-box reveal">
+        <div class="num">2</div>
+        <p>Public safety agencies<br>served as chaplain</p>
+      </div>
+      <div class="stat-box reveal">
+        <div class="num">3</div>
+        <p>Languages spoken:<br>English · Arabic · German</p>
+      </div>
+    </div>
+    <p class="community-note reveal">Active in the Stafford Diversity Advisory Coalition (Vice President) and the Faith Leaders Advisory Committee — building bridges across faiths, backgrounds, and communities every day.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <span class="eyebrow">Ready to meet?</span>
+      <h2>Meet the Imam in person</h2>
+      <p>Book a private appointment — for counseling, a question of faith, a nikah, or simply to talk. You're welcome here, regardless of your background.</p>
+      <div class="cta-btns">
+        <a href="book.html" class="btn btn-gold">Book an Appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:+15408425840" class="btn btn-ghost">Call the office</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="stars gold"></div>
+  <div class="foot-in">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <svg class="mark" viewBox="0 0 34 40" fill="none" style="width:34px;height:40px">
+          <path d="M3 38V18C3 9 9.5 2 17 2s14 7 14 16v20" stroke="#BE9B4E" stroke-width="2"/>
+          <path d="M9 38V20c0-5 3.6-9 8-9s8 4 8 9v18" stroke="#E6EFE9" stroke-width="2"/>
+          <circle cx="17" cy="6.5" r="1.8" fill="#BE9B4E"/>
+        </svg>
+        <span class="lab"><b style="font-family:'Cormorant Garamond';font-size:1.45rem;color:var(--sand)">Imam Sherif</b></span>
+      </div>
+      <p>Private counsel and guidance for the community of Stafford, Virginia — and chaplain to Stafford Fire &amp; Rescue.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/imamsherifshehata" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/share/1bqJWBLQT2/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.12 7.5H17V4.6c-.32-.04-1.44-.14-2.74-.14-2.71 0-4.57 1.66-4.57 4.7V11H7v3.25h2.69V22h3.3v-7.75h2.58L16 11h-3.01V9.49c0-.94.25-1.99 1.13-1.99z"/></svg></a>
+        <a href="https://www.tiktok.com/@sherifabdallashehata" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 1.8 3.8 4 4v3c-1.5 0-2.9-.4-4-1.1V16a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.1a2.8 2.8 0 102 2.7V3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="imam.html">Get to Know the Imam</a>
+      <a href="book.html">Book a meeting</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=2604%20Richmond%20Highway%2C%20Stafford%2C%20VA%2022554" target="_blank" rel="noopener">2604 Richmond Highway<br>Stafford, VA 22554</a>
+      <a href="tel:+15408425840">(540) 842-5840</a>
+      <a href="mailto:imamsherifshehata@gmail.com">imamsherifshehata@gmail.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">© <span id="yr"></span> Imam Sherif · Stafford, Virginia. Meetings by appointment.</div>
+</footer>
+
+<script>
+(function(){
+  /* year */
+  var yr=document.getElementById('yr'); if(yr) yr.textContent=new Date().getFullYear();
+
+  /* reveal on scroll */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* mobile nav toggle */
+  var nav=document.getElementById('siteNav'), toggle=document.getElementById('navToggle');
+  if(toggle){
+    toggle.onclick=function(){
+      var open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+    };
+    document.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');});
+    });
+  }
+})();
+</script>
+</body>
+</html>
