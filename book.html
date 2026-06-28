@@ -29,7 +29,7 @@ img{max-width:100%;display:block}
 .btn svg{width:16px;height:16px}
 .btn-gold{background:var(--gold);color:#241c06}
 .btn-gold:hover:not(:disabled){background:var(--gold-d);color:#fff;transform:translateY(-2px)}
-.btn-gold:disabled{cursor:default}
+.btn-gold:disabled{cursor:default;opacity:.5}
 .btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
 .btn-ghost:hover{background:var(--green);color:var(--sand)}
 
@@ -81,7 +81,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);bac
 
 /* booking card */
 .booking-section{background:var(--cream);padding:48px 0 80px}
-.book-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;max-width:940px;margin:0 auto}
+.book-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;max-width:720px;margin:0 auto}
 .book-card-head{background:var(--green);padding:24px 32px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
 .book-card-head .stars{opacity:.07}
 .bc-badge{position:relative;background:rgba(190,155,78,.18);border:1px solid rgba(190,155,78,.38);border-radius:10px;padding:10px 14px;flex:none;text-align:center;min-width:72px}
@@ -94,11 +94,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);bac
 .bc-tag svg{width:10px;height:10px}
 .book-card-body{padding:0}
 
-/* form layout */
-.form-wrap{display:grid;grid-template-columns:1.1fr .9fr;min-height:480px}
-.form-side{padding:36px 32px;border-right:1px solid var(--line)}
-.form-side h4{font-family:'Cormorant Garamond';font-size:1.4rem;color:var(--green);margin-bottom:4px}
-.form-side .form-sub{color:var(--ink-soft);font-size:.88rem;margin-bottom:24px}
+/* form fields */
 .field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
 .field label{font-weight:700;font-size:.78rem;letter-spacing:.04em;color:var(--ink);text-transform:uppercase}
 .field label .opt{font-weight:400;color:var(--ink-soft);text-transform:none;letter-spacing:0}
@@ -107,60 +103,67 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);bac
 .field textarea{resize:vertical;min-height:80px;line-height:1.5}
 .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C665F' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-actions{display:flex;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap}
-.form-actions .btn{padding:.8rem 1.4rem}
-.form-note{font-size:.78rem;color:var(--ink-soft)}
+.form-sub{color:var(--ink-soft);font-size:.88rem;margin-bottom:20px}
 
-/* selected time badge (below submit) */
-.sel-time-badge{display:none;align-items:center;gap:8px;margin-top:10px;padding:9px 13px;background:rgba(16,61,49,.06);border:1.5px solid rgba(16,61,49,.14);border-radius:10px;font-size:.83rem;font-weight:600;color:var(--green)}
-.sel-time-badge svg{width:13px;height:13px;color:var(--gold-d);flex:none}
+/* wizard */
+.wiz-steps{display:flex;align-items:center;padding:22px 32px;border-bottom:1px solid var(--line)}
+.wiz-step{display:flex;align-items:center;gap:7px;flex:none}
+.wiz-num{width:26px;height:26px;border-radius:50%;background:var(--line);color:var(--ink-soft);font-size:.72rem;font-weight:800;display:grid;place-items:center;transition:.2s;flex:none}
+.wiz-label{font-size:.78rem;font-weight:700;color:var(--ink-soft);transition:.2s;white-space:nowrap}
+.wiz-div{flex:1;height:1.5px;background:var(--line);margin:0 10px;min-width:14px;transition:.2s}
+.wiz-step.active .wiz-num{background:var(--green);color:var(--gold)}
+.wiz-step.active .wiz-label{color:var(--green)}
+.wiz-step.done .wiz-num{background:var(--gold-d);color:#fff}
+.wiz-step.done .wiz-label{color:var(--gold-d)}
+.wiz-step.done + .wiz-div{background:var(--gold-d)}
+.wiz-panel{padding:28px 32px}
+.wiz-panel.hidden{display:none}
+.wiz-nav{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.wiz-form-title{font-family:'Cormorant Garamond';font-size:1.4rem;color:var(--green);margin-bottom:4px}
 
-/* right panel — info mode */
-.info-side{padding:36px 28px;background:var(--cream);display:flex;flex-direction:column;gap:0}
-.info-side h4{font-family:'Cormorant Garamond';font-size:1.3rem;color:var(--green);margin-bottom:16px}
-.next-steps{list-style:none;margin-bottom:26px}
-.next-steps li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.88rem;color:var(--ink-soft)}
-.next-steps li:last-child{border:none}
-.next-steps .ns-num{width:22px;height:22px;border-radius:50%;background:var(--green);color:var(--gold);font-size:.7rem;font-weight:800;display:grid;place-items:center;flex:none;margin-top:1px}
-.divider{height:1px;background:var(--line);margin:18px 0}
-.direct-contact{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
-.dc-link{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:.2s}
-.dc-link:hover{border-color:var(--gold);transform:translateX(3px)}
-.dc-link .dc-ic{width:36px;height:36px;border-radius:9px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);flex:none}
-.dc-link .dc-ic svg{width:17px;height:17px}
-.dc-link b{display:block;font-size:.88rem;font-weight:700;color:var(--green)}
-.dc-link span{font-size:.78rem;color:var(--ink-soft)}
-.hours-note{font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
-.hours-note svg{width:13px;height:13px;color:var(--gold-d);flex:none}
+/* time reminder bar */
+.wiz-time-bar{display:flex;align-items:center;gap:10px;background:rgba(16,61,49,.07);border:1.5px solid rgba(16,61,49,.14);border-radius:10px;padding:11px 14px;margin-bottom:18px}
+.wiz-time-bar svg{color:var(--gold-d);flex:none}
+.wiz-time-bar .wiz-time-txt{font-size:.88rem;font-weight:600;color:var(--green);flex:1}
+.wiz-time-bar .wiz-change{font-family:'Mulish';font-weight:700;font-size:.72rem;background:transparent;border:1.5px solid var(--green);color:var(--green);border-radius:999px;padding:.25rem .7rem;cursor:pointer;transition:.2s;white-space:nowrap}
+.wiz-time-bar .wiz-change:hover{background:var(--green);color:var(--sand)}
 
-/* right panel — calendar mode */
-.cal-side{padding:22px 20px;background:var(--cream)}
-.cal-side-head{margin-bottom:14px}
-.cal-side-head h4{font-family:'Cormorant Garamond';font-size:1.2rem;color:var(--green);margin-bottom:2px}
-.cal-side-head p{font-size:.76rem;color:var(--ink-soft)}
+/* confirm summary */
+.wiz-confirm-title{font-family:'Cormorant Garamond';font-size:1.4rem;color:var(--green);margin-bottom:4px}
+.cf-summary{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0 4px}
+.cf-row{display:flex;gap:14px;padding:11px 16px;border-bottom:1px solid var(--line)}
+.cf-row:last-child{border-bottom:none}
+.cf-label{font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);min-width:86px;flex:none;padding-top:2px}
+.cf-val{font-size:.9rem;color:var(--ink);line-height:1.5}
+
+/* full-width calendar */
+.cal-full-head{margin-bottom:16px}
+.cal-full-head h4{font-family:'Cormorant Garamond';font-size:1.4rem;color:var(--green);margin-bottom:4px}
+.cal-full-head p{font-size:.85rem;color:var(--ink-soft)}
+.cal-full-inner{max-width:480px;margin:0 auto}
 .cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.cal-mlabel{font-family:'Cormorant Garamond';font-size:1.05rem;font-weight:600;color:var(--green);text-align:center}
-.cal-arrow{background:none;border:1.5px solid var(--line);border-radius:50%;width:28px;height:28px;display:grid;place-items:center;cursor:pointer;color:var(--ink-soft);transition:.18s;flex:none}
+.cal-mlabel{font-family:'Cormorant Garamond';font-size:1.1rem;font-weight:600;color:var(--green);text-align:center}
+.cal-arrow{background:none;border:1.5px solid var(--line);border-radius:50%;width:30px;height:30px;display:grid;place-items:center;cursor:pointer;color:var(--ink-soft);transition:.18s;flex:none}
 .cal-arrow:hover{border-color:var(--gold);color:var(--green)}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:8px}
-.cdn{font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:4px 0}
-.cday{border:none;background:none;border-radius:7px;height:32px;width:100%;font-family:'Mulish';font-size:.8rem;font-weight:600;cursor:default;color:var(--ink-soft);opacity:.3;transition:.15s;display:grid;place-items:center}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:8px}
+.cdn{font-size:.62rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:6px 0}
+.cday{border:none;background:none;border-radius:8px;height:40px;width:100%;font-family:'Mulish';font-size:.86rem;font-weight:600;cursor:default;color:var(--ink-soft);opacity:.3;transition:.15s;display:grid;place-items:center}
 .cday.avail{opacity:1;cursor:pointer;color:var(--green);background:rgba(16,61,49,.07)}
 .cday.avail:hover,.cday.avail:focus{background:var(--green);color:var(--sand);outline:none}
 .cday.today{box-shadow:inset 0 0 0 2px var(--gold)}
 .cday.today:not(.avail){color:var(--ink-soft)}
 .cday.sel,.cday.sel.avail{background:var(--green);color:var(--gold)}
 .cday.pad{opacity:0;pointer-events:none}
-.cslots-wrap{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.cslots-wrap{border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
 .cslots-lbl{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
-.cslots{display:flex;flex-wrap:wrap;gap:6px}
-.cslot{background:#fff;border:1.5px solid var(--line);border-radius:7px;padding:6px 11px;font-family:'Mulish';font-size:.8rem;font-weight:700;color:var(--green);cursor:pointer;transition:.15s}
+.cslots{display:flex;flex-wrap:wrap;gap:7px}
+.cslot{background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:7px 13px;font-family:'Mulish';font-size:.82rem;font-weight:700;color:var(--green);cursor:pointer;transition:.15s}
 .cslot:hover{border-color:var(--gold);background:var(--sand)}
 .cslot.sel{background:var(--green);border-color:var(--green);color:var(--gold)}
-.cloading{text-align:center;padding:24px 12px;color:var(--ink-soft);font-size:.82rem}
-.cempty{font-size:.8rem;color:var(--ink-soft);padding:12px 4px;text-align:center;line-height:1.5}
+.cloading{text-align:center;padding:28px 12px;color:var(--ink-soft);font-size:.82rem}
+.cempty{font-size:.8rem;color:var(--ink-soft);padding:14px 4px;text-align:center;line-height:1.6}
 
-/* success state */
+/* success */
 .success-wrap{padding:56px 40px;text-align:center}
 .success-icon{width:72px;height:72px;border-radius:20px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);margin:0 auto 20px}
 .success-icon svg{width:36px;height:36px}
@@ -205,18 +208,18 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
   header.nav.open .nav-links a.on::after{display:none}
   header.nav.open .nav-links a.btn{margin-top:12px;justify-content:center;background:var(--gold);color:#241c06}
 }
-@media(max-width:800px){
-  .form-wrap{grid-template-columns:1fr}
-  .form-side{border-right:none;border-bottom:1px solid var(--line)}
+@media(max-width:640px){
   .info-grid{grid-template-columns:1fr}
   .foot-in{grid-template-columns:1fr;gap:28px}
   .book-card-head{flex-direction:column;align-items:flex-start;gap:12px}
   .form-grid-2{grid-template-columns:1fr}
-  .cal-side{border-top:1px solid var(--line)}
+  .wiz-panel{padding:20px 18px}
+  .wiz-steps{padding:16px 18px}
 }
-@media(max-width:520px){
+@media(max-width:420px){
   .chips-row{gap:7px}
   .chip{font-size:.8rem;padding:8px 14px}
+  .wiz-label{display:none}
   .success-contacts{flex-direction:column;align-items:center}
 }
 @media(prefers-reduced-motion:reduce){
@@ -271,12 +274,10 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
       <h2>Choose a service</h2>
       <p>Select what you need — this helps Imam Sherif prepare for your time together.</p>
     </div>
-
     <div class="chip-group">
       <div class="chip-group-label">Counsel &amp; Guidance</div>
       <div class="chips-row" id="chipsCounsel"></div>
     </div>
-
     <div class="chip-group">
       <div class="chip-group-label gold">Fundraising &amp; Special Events</div>
       <div class="chips-row" id="chipsFund"></div>
@@ -392,77 +393,60 @@ var CAL_EVENT_IDS = {
   speaking: 6142602
 };
 
-/* Services that show the live calendar picker vs. email-based inquiry */
 var SCHEDULABLE = { ruqya: 1, family: 1, convert: 1, general: 1 };
 
-/* ── Service definitions ── */
 var SVC = [
   {
     id:'ruqya', label:'Ruqya', group:'counsel',
-    desc:'Spiritual healing and protection through recitation of the Quran.', len:'30–45 min',
-    icon:'quran',
-    fields:[
-      {id:'concern', label:'Brief description', type:'textarea', req:false, hint:'Optional — share what brings you in so Imam Sherif can prepare.'}
-    ]
+    desc:'Spiritual healing and protection through recitation of the Quran.', len:'30–45 min', icon:'quran',
+    fields:[{id:'concern',label:'Brief description',type:'textarea',req:false,hint:'Optional — share what brings you in so Imam Sherif can prepare.'}]
   },
   {
     id:'family', label:'Marriage & Family Counseling', group:'counsel',
-    desc:'Confidential support for marital or family matters. Accommodations are required — please request at least 45–60 days in advance.', len:'45–60 min',
-    icon:'family',
+    desc:'Confidential support for marital or family matters.', len:'45–60 min', icon:'family',
     fields:[
-      {id:'attending', label:'Who will be attending', type:'text', req:true, hint:'e.g. "Myself" or "Myself and spouse"'},
-      {id:'prefdate', label:'Preferred date range', type:'text', req:false, hint:'e.g. "Mid-March" or "Anytime after April 1"'},
-      {id:'topic', label:'Brief description', type:'textarea', req:false, hint:'Optional — helps the Imam prepare. All information is strictly confidential.'}
+      {id:'attending',label:'Who will be attending',type:'text',req:true,hint:'e.g. "Myself" or "Myself and spouse"'},
+      {id:'topic',label:'Brief description',type:'textarea',req:false,hint:'Optional — helps the Imam prepare. All information is strictly confidential.'}
     ]
   },
   {
     id:'convert', label:'New Muslim Support', group:'counsel',
-    desc:'Mentorship and guidance for those new to or exploring Islam.', len:'30–45 min',
-    icon:'heart',
-    fields:[
-      {id:'background', label:'How can we help you?', type:'textarea', req:true, hint:'Tell us a little about where you are and what you are looking for.'}
-    ]
+    desc:'Mentorship and guidance for those new to or exploring Islam.', len:'30–45 min', icon:'heart',
+    fields:[{id:'background',label:'How can we help you?',type:'textarea',req:true,hint:'Tell us a little about where you are and what you are looking for.'}]
   },
   {
     id:'home', label:'Home Visit', group:'counsel',
-    desc:'Imam Sherif visits you at home — for the elderly, ill, or those unable to travel.', len:'By arrangement',
-    icon:'home',
+    desc:'Imam Sherif visits you at home — for the elderly, ill, or those unable to travel.', len:'By arrangement', icon:'home',
     fields:[
-      {id:'address', label:'Visit address', type:'text', req:true, hint:'Full address including apartment number if applicable.'},
-      {id:'reason', label:'Reason for visit', type:'textarea', req:true, hint:'Brief description of the purpose of the visit.'}
+      {id:'address',label:'Visit address',type:'text',req:true,hint:'Full address including apartment number if applicable.'},
+      {id:'reason',label:'Reason for visit',type:'textarea',req:true,hint:'Brief description of the purpose of the visit.'}
     ]
   },
   {
     id:'general', label:'General Guidance', group:'counsel',
-    desc:'A question of faith, practice, or something on your heart. All are welcome.', len:'20–30 min',
-    icon:'sun',
-    fields:[
-      {id:'topic', label:'Topic or question', type:'textarea', req:false, hint:'Optional — share what you would like to discuss.'}
-    ]
+    desc:'A question of faith, practice, or something on your heart. All are welcome.', len:'20–30 min', icon:'sun',
+    fields:[{id:'topic',label:'Topic or question',type:'textarea',req:false,hint:'Optional — share what you would like to discuss.'}]
   },
   {
     id:'nikah', label:'Nikah / Wedding Ceremony', group:'fundraising',
-    desc:'Officiate your marriage ceremony in accordance with Islamic tradition.', len:'By arrangement',
-    icon:'star',
+    desc:'Officiate your marriage ceremony in accordance with Islamic tradition.', len:'By arrangement', icon:'star',
     fields:[
-      {id:'bride', label:"Bride's full name", type:'text', req:true},
-      {id:'groom', label:"Groom's full name", type:'text', req:true},
-      {id:'wdate', label:'Proposed wedding date', type:'date', req:false},
-      {id:'venue', label:'Venue / location', type:'text', req:false, hint:'City or venue name — can be confirmed later.'},
-      {id:'size', label:'Approximate guest count', type:'text', req:false}
+      {id:'bride',label:"Bride's full name",type:'text',req:true},
+      {id:'groom',label:"Groom's full name",type:'text',req:true},
+      {id:'wdate',label:'Proposed wedding date',type:'date',req:false},
+      {id:'venue',label:'Venue / location',type:'text',req:false,hint:'City or venue name — can be confirmed later.'},
+      {id:'size',label:'Approximate guest count',type:'text',req:false}
     ]
   },
   {
     id:'speaking', label:'Speaking Request', group:'fundraising',
-    desc:'Invite Imam Sherif to speak at your event, masjid, school, or organization.', len:'By arrangement',
-    icon:'mic',
+    desc:'Invite Imam Sherif to speak at your event, masjid, school, or organization.', len:'By arrangement', icon:'mic',
     fields:[
-      {id:'org', label:'Organization / event name', type:'text', req:true},
-      {id:'edate', label:'Event date', type:'date', req:false},
-      {id:'etype', label:'Event type', type:'select', req:true,
-        opts:['Masjid / Islamic event','School or university','Interfaith / community event','Fundraiser / gala','Corporate or government event','Other']},
-      {id:'topic', label:'Requested topic', type:'text', req:false, hint:'e.g. Islam and community, chaplaincy, interfaith dialogue'},
-      {id:'audience', label:'Expected audience size', type:'text', req:false}
+      {id:'org',label:'Organization / event name',type:'text',req:true},
+      {id:'edate',label:'Event date',type:'date',req:false},
+      {id:'etype',label:'Event type',type:'select',req:true,opts:['Masjid / Islamic event','School or university','Interfaith / community event','Fundraiser / gala','Corporate or government event','Other']},
+      {id:'topic',label:'Requested topic',type:'text',req:false,hint:'e.g. Islam and community, chaplaincy, interfaith dialogue'},
+      {id:'audience',label:'Expected audience size',type:'text',req:false}
     ]
   }
 ];
@@ -482,7 +466,10 @@ var MONTHS = ['January','February','March','April','May','June','July','August',
 /* ── Calendar state ── */
 var CAL = { year:0, month:0, eventTypeId:0, slots:{}, selDate:null, selTime:null };
 
-/* ── Build service chip rows ── */
+/* ── Wizard state ── */
+var WIZ = { svc: null, schedulable: false, step: 1, name:'', phone:'', email:'', extra:{}, notes:'' };
+
+/* ── Build chip rows ── */
 function buildChips(){
   var counsel = document.getElementById('chipsCounsel');
   var fund    = document.getElementById('chipsFund');
@@ -501,19 +488,146 @@ function selectService(s){
     c.classList.toggle('active', c.getAttribute('data-id')===s.id);
   });
   document.getElementById('cardTitle').textContent = s.label;
-  document.getElementById('cardSub').textContent = s.desc + (s.len!=='By arrangement' ? ' · ' + s.len : '');
+  document.getElementById('cardSub').textContent = s.desc + (s.len !== 'By arrangement' ? ' · ' + s.len : '');
   document.getElementById('cardTag').style.display = s.group==='fundraising' ? 'inline-flex' : 'none';
+  renderWizard(s);
   var card = document.querySelector('.book-card');
   if(card) setTimeout(function(){ card.scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
-  renderForm(s);
+}
+
+/* ── Render wizard ── */
+function renderWizard(s){
+  WIZ.svc = s;
+  WIZ.schedulable = !!SCHEDULABLE[s.id];
+  WIZ.step = 1;
+  WIZ.name = ''; WIZ.phone = ''; WIZ.email = ''; WIZ.extra = {}; WIZ.notes = '';
+
+  if(WIZ.schedulable){
+    CAL.eventTypeId = CAL_EVENT_IDS[s.id];
+    CAL.slots = {}; CAL.selDate = null; CAL.selTime = null;
+  }
+
+  var labels = WIZ.schedulable ? ['Pick a time','Your details','Confirm'] : ['Your details','Confirm'];
+  var total  = labels.length;
+
+  /* step indicator */
+  var stepsHTML = '<div class="wiz-steps" id="wizSteps">';
+  labels.forEach(function(lbl, i){
+    if(i > 0) stepsHTML += '<div class="wiz-div" id="wizDiv'+(i+1)+'"></div>';
+    stepsHTML += '<div class="wiz-step" id="wizStep'+(i+1)+'">'
+      + '<div class="wiz-num">'+(i+1)+'</div>'
+      + '<span class="wiz-label">'+lbl+'</span>'
+      + '</div>';
+  });
+  stepsHTML += '</div>';
+
+  var p1 = WIZ.schedulable ? buildCalPanelHTML() : buildFormPanelHTML(s, false);
+  var p2 = WIZ.schedulable ? buildFormPanelHTML(s, true) : buildConfirmPanelHTML(s, 1);
+  var p3 = WIZ.schedulable ? buildConfirmPanelHTML(s, 2) : '';
+
+  var html = stepsHTML
+    + '<div class="wiz-panel hidden" id="wizP1">'+p1+'</div>'
+    + '<div class="wiz-panel hidden" id="wizP2">'+p2+'</div>'
+    + (WIZ.schedulable ? '<div class="wiz-panel hidden" id="wizP3">'+p3+'</div>' : '');
+
+  document.getElementById('cardBody').innerHTML = html;
+
+  var form = document.getElementById('svcForm');
+  if(form) form.addEventListener('submit', function(e){ e.preventDefault(); advanceFromDetails(); });
+
+  goStep(1);
+
+  if(WIZ.schedulable){
+    var now = new Date();
+    CAL.year  = now.getFullYear();
+    CAL.month = now.getMonth();
+    calLoadMonth();
+  }
+}
+
+/* ── Wizard panel builders ── */
+function buildCalPanelHTML(){
+  return '<div class="cal-full-head">'
+    + '<h4>Pick a date &amp; time</h4>'
+    + '<p>All times are Eastern (ET). Imam Sherif will confirm your appointment.</p>'
+    + '</div>'
+    + '<div class="cal-full-inner">'
+      + '<div class="cal-hdr">'
+        + '<button class="cal-arrow" onclick="calPrevMonth()" aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M15 18l-6-6 6-6"/></svg></button>'
+        + '<div class="cal-mlabel" id="calMLabel"></div>'
+        + '<button class="cal-arrow" onclick="calNextMonth()" aria-label="Next month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M9 18l6-6-6-6"/></svg></button>'
+      + '</div>'
+      + '<div class="cal-grid" id="calGrid"><div class="cloading">Loading availability…</div></div>'
+      + '<div id="calSlots"></div>'
+    + '</div>'
+    + '<div class="wiz-nav">'
+      + '<button class="btn btn-gold" id="calContBtn" onclick="calContinue()" disabled>'
+        + 'Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+      + '</button>'
+      + '<span id="calErr" style="font-size:.78rem;color:#c0392b;display:none">Please select a date and time to continue.</span>'
+    + '</div>';
+}
+
+function buildFormPanelHTML(s, hasBack){
+  var fieldsHTML = buildFieldsHTML(s.fields);
+  var submitLabel = WIZ.schedulable ? 'Review Booking' : 'Review Request';
+  var timeBarHTML = hasBack
+    ? '<div class="wiz-time-bar" id="wizTimeBar" style="display:none">'
+        + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
+        + '<span class="wiz-time-txt" id="wizTimeTxt"></span>'
+        + '<button type="button" class="wiz-change" onclick="goStep(1)">Change</button>'
+      + '</div>'
+    : '';
+  var backBtnHTML = hasBack
+    ? '<button type="button" class="btn btn-ghost" onclick="goStep(1)">'
+        + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back'
+      + '</button>'
+    : '';
+
+  return timeBarHTML
+    + '<h4 class="wiz-form-title">Your details</h4>'
+    + '<p class="form-sub">' + (hasBack ? 'Fill in your details to continue.' : 'Fill in the fields below and the office will reach out to confirm your time.') + '</p>'
+    + '<form id="svcForm" novalidate>'
+      + '<div class="form-grid-2">'
+        + '<div class="field"><label>Full name</label><input type="text" name="name" required placeholder="Your full name"/></div>'
+        + '<div class="field"><label>Phone number</label><input type="tel" name="phone" required placeholder="(___) ___-____"/></div>'
+      + '</div>'
+      + '<div class="field"><label>Email address</label><input type="email" name="email" required placeholder="you@example.com"/></div>'
+      + fieldsHTML
+      + '<div class="field"><label>Additional notes <span class="opt">(optional)</span></label><textarea name="notes" rows="3" placeholder="Anything else you\'d like Imam Sherif to know…"></textarea></div>'
+      + '<div class="wiz-nav">'
+        + '<button type="submit" class="btn btn-gold">'+submitLabel+' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>'
+        + backBtnHTML
+        + '<span id="formErr" style="font-size:.78rem;color:#c0392b;display:none;width:100%;margin-top:4px"></span>'
+      + '</div>'
+    + '</form>';
+}
+
+function buildConfirmPanelHTML(s, backStep){
+  var isSchedulable = WIZ.schedulable;
+  var submitLabel = isSchedulable ? 'Confirm Booking' : 'Send Request';
+  var submitFn    = isSchedulable ? 'submitBooking()' : 'submitMailto()';
+
+  return '<h4 class="wiz-confirm-title">Review your request</h4>'
+    + '<p class="form-sub">Please confirm everything looks correct before submitting.</p>'
+    + '<div class="cf-summary" id="cfSummary"></div>'
+    + '<div class="wiz-nav">'
+      + '<button class="btn btn-gold" id="confirmBtn" onclick="'+submitFn+'">'
+        + submitLabel + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+      + '</button>'
+      + '<button class="btn btn-ghost" onclick="goStep('+backStep+')">'
+        + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back'
+      + '</button>'
+      + '<span id="confirmErr" style="font-size:.78rem;color:#c0392b;display:none;width:100%;margin-top:4px"></span>'
+    + '</div>';
 }
 
 /* ── Build service-specific field HTML ── */
 function buildFieldsHTML(fields){
   var html = '';
   (fields||[]).forEach(function(f){
-    var opt = f.req ? '' : ' <span class="opt">(optional)</span>';
-    var hint = f.hint ? '<span style="font-size:.75rem;color:var(--ink-soft);margin-top:3px">'+f.hint+'</span>' : '';
+    var opt  = f.req ? '' : ' <span class="opt">(optional)</span>';
+    var hint = f.hint ? '<span style="font-size:.75rem;color:var(--ink-soft);margin-top:3px;display:block">'+f.hint+'</span>' : '';
     if(f.type==='textarea'){
       html += '<div class="field"><label>'+f.label+opt+'</label><textarea name="'+f.id+'" rows="3"'+(f.req?' required':'')+'></textarea>'+hint+'</div>';
     } else if(f.type==='select'){
@@ -526,101 +640,201 @@ function buildFieldsHTML(fields){
   return html;
 }
 
-/* ── Right panel: live calendar ── */
-function calPanelHTML(){
-  return '<div class="info-side cal-side">'
-    +'<div class="cal-side-head"><h4>Pick a time</h4><p>Eastern Time &mdash; Imam Sherif will confirm your appointment.</p></div>'
-    +'<div class="cal-hdr">'
-      +'<button class="cal-arrow" onclick="calPrevMonth()" aria-label="Previous month">'
-        +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M15 18l-6-6 6-6"/></svg>'
-      +'</button>'
-      +'<div class="cal-mlabel" id="calMLabel"></div>'
-      +'<button class="cal-arrow" onclick="calNextMonth()" aria-label="Next month">'
-        +'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M9 18l6-6-6-6"/></svg>'
-      +'</button>'
-    +'</div>'
-    +'<div class="cal-grid" id="calGrid"><div class="cloading">Loading availability…</div></div>'
-    +'<div id="calSlots"></div>'
-  +'</div>';
-}
+/* ── Step navigation ── */
+function goStep(n){
+  var total = WIZ.schedulable ? 3 : 2;
+  WIZ.step = n;
 
-/* ── Right panel: info / next steps ── */
-function infoPanelHTML(){
-  return '<div class="info-side">'
-    +'<h4>What happens next</h4>'
-    +'<ol class="next-steps">'
-      +'<li><div class="ns-num">1</div><span>Submit your request using the form.</span></li>'
-      +'<li><div class="ns-num">2</div><span>The office reviews your request and contacts you within 1–2 business days.</span></li>'
-      +'<li><div class="ns-num">3</div><span>You receive a confirmed date and time — and can prepare for your meeting.</span></li>'
-    +'</ol>'
-    +'<div class="divider"></div>'
-    +'<p style="font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px">Or reach us directly</p>'
-    +'<div class="direct-contact">'
-      +'<a class="dc-link" href="tel:+15408425840">'
-        +'<div class="dc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>'
-        +'<div><b>Call</b><span>(540) 842-5840</span></div>'
-      +'</a>'
-      +'<a class="dc-link" href="mailto:imamsherifshehata@gmail.com">'
-        +'<div class="dc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>'
-        +'<div><b>Email</b><span>imamsherifshehata@gmail.com</span></div>'
-      +'</a>'
-    +'</div>'
-    +'<p class="hours-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Sunday–Thursday &middot; By appointment</p>'
-  +'</div>';
-}
-
-/* ── Render booking form ── */
-function renderForm(s){
-  var schedulable = !!SCHEDULABLE[s.id];
-  var extraFields = buildFieldsHTML(s.fields);
-  var rightPanel  = schedulable ? calPanelHTML() : infoPanelHTML();
-
-  var submitBtnHTML = schedulable
-    ? '<button type="submit" id="submitBtn" class="btn btn-gold" disabled style="opacity:.5">Select a time above</button>'
-    : '<button type="submit" id="submitBtn" class="btn btn-gold">Send Request <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
-
-  var selBadgeHTML = schedulable
-    ? '<div class="sel-time-badge" id="selBadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="selBadgeText"></span></div>'
-    : '';
-
-  document.getElementById('cardBody').innerHTML =
-    '<div class="form-wrap">'
-      +'<div class="form-side">'
-        +'<h4>Your details</h4>'
-        +'<p class="form-sub">'+(schedulable ? 'Fill in the fields below and pick a time on the right.' : 'Fill in the fields below and the office will reach out to confirm your time.')+'</p>'
-        +'<form id="svcForm" novalidate>'
-          +'<div class="form-grid-2">'
-            +'<div class="field"><label>Full name</label><input type="text" name="name" required placeholder="Your full name"/></div>'
-            +'<div class="field"><label>Phone number</label><input type="tel" name="phone" required placeholder="(___) ___-____"/></div>'
-          +'</div>'
-          +'<div class="field"><label>Email address</label><input type="email" name="email" required placeholder="you@example.com"/></div>'
-          + extraFields
-          +'<div class="field"><label>Additional notes <span class="opt">(optional)</span></label><textarea name="notes" rows="3" placeholder="Anything else you want Imam Sherif to know…"></textarea></div>'
-          +'<div class="form-actions">'
-            + submitBtnHTML
-            +'<span id="formErr" style="font-size:.78rem;color:#c0392b;display:none"></span>'
-          +'</div>'
-          + selBadgeHTML
-        +'</form>'
-      +'</div>'
-      + rightPanel
-    +'</div>';
-
-  document.getElementById('svcForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    schedulable ? submitSchedulable(s) : submitMailto(s);
-  });
-
-  if(schedulable){
-    CAL.eventTypeId = CAL_EVENT_IDS[s.id];
-    CAL.slots    = {};
-    CAL.selDate  = null;
-    CAL.selTime  = null;
-    var now = new Date();
-    CAL.year  = now.getFullYear();
-    CAL.month = now.getMonth();
-    calLoadMonth();
+  for(var i = 1; i <= total; i++){
+    var s = document.getElementById('wizStep'+i);
+    if(!s) continue;
+    s.classList.remove('active','done');
+    if(i === n)       s.classList.add('active');
+    else if(i < n)    s.classList.add('done');
+    var d = document.getElementById('wizDiv'+(i+1));
+    if(d){ d.style.background = i < n ? 'var(--gold-d)' : 'var(--line)'; }
   }
+
+  for(var j = 1; j <= total; j++){
+    var p = document.getElementById('wizP'+j);
+    if(!p) continue;
+    if(j === n) p.classList.remove('hidden');
+    else        p.classList.add('hidden');
+  }
+
+  /* side effects */
+  if(WIZ.schedulable && n === 2){
+    var bar = document.getElementById('wizTimeBar');
+    var txt = document.getElementById('wizTimeTxt');
+    if(bar && txt && CAL.selTime){
+      txt.textContent = fmtDateTime(CAL.selTime);
+      bar.style.display = 'flex';
+    }
+  }
+
+  var confirmStep = WIZ.schedulable ? 3 : 2;
+  if(n === confirmStep) populateConfirm();
+
+  var card = document.querySelector('.book-card');
+  if(card) setTimeout(function(){ card.scrollIntoView({behavior:'smooth',block:'start'}); }, 60);
+}
+
+/* ── Calendar: continue from step 1 ── */
+function calContinue(){
+  var errEl = document.getElementById('calErr');
+  if(!CAL.selTime){
+    if(errEl){ errEl.style.display='inline'; }
+    return;
+  }
+  if(errEl) errEl.style.display='none';
+  goStep(2);
+}
+
+/* ── Details form: validate and advance ── */
+function advanceFromDetails(){
+  var form  = document.getElementById('svcForm');
+  var errEl = document.getElementById('formErr');
+  if(!form || !errEl) return;
+
+  var name  = getVal(form,'name');
+  var phone = getVal(form,'phone');
+  var email = getVal(form,'email');
+
+  if(!name || !phone || !email){
+    errEl.textContent = 'Please fill in your name, phone, and email.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  var svc = WIZ.svc;
+  for(var i=0; i<(svc.fields||[]).length; i++){
+    var f = svc.fields[i];
+    if(f.req && !getVal(form, f.id)){
+      errEl.textContent = f.label + ' is required.';
+      errEl.style.display = 'block';
+      return;
+    }
+  }
+  errEl.style.display = 'none';
+
+  WIZ.name  = name;
+  WIZ.phone = phone;
+  WIZ.email = email;
+  WIZ.extra = {};
+  (svc.fields||[]).forEach(function(f){
+    var v = getVal(form, f.id);
+    if(v) WIZ.extra[f.id] = { label: f.label, value: v };
+  });
+  WIZ.notes = getVal(form,'notes');
+
+  goStep(WIZ.schedulable ? 3 : 2);
+}
+
+function getVal(form, name){
+  var el = form.elements[name];
+  if(!el) return '';
+  if(el.tagName) return el.value.trim();
+  /* NodeList from multiple fields with same name — unlikely */
+  return el[0] ? el[0].value.trim() : '';
+}
+
+/* ── Populate confirm summary ── */
+function populateConfirm(){
+  var s = WIZ.svc;
+  var rows = [];
+  rows.push({ label:'Service', value: s.label });
+  if(WIZ.schedulable && CAL.selTime) rows.push({ label:'Date & time', value: fmtDateTime(CAL.selTime) });
+  rows.push({ label:'Name',  value: WIZ.name  });
+  rows.push({ label:'Phone', value: WIZ.phone });
+  rows.push({ label:'Email', value: WIZ.email });
+  Object.keys(WIZ.extra).forEach(function(k){
+    rows.push({ label: WIZ.extra[k].label, value: WIZ.extra[k].value });
+  });
+  if(WIZ.notes) rows.push({ label:'Notes', value: WIZ.notes });
+
+  var html = rows.map(function(r){
+    return '<div class="cf-row"><span class="cf-label">'+esc(r.label)+'</span><span class="cf-val">'+esc(r.value)+'</span></div>';
+  }).join('');
+
+  var el = document.getElementById('cfSummary');
+  if(el) el.innerHTML = html;
+}
+
+/* ── Submit: schedulable → POST /api/book ── */
+function submitBooking(){
+  var s     = WIZ.svc;
+  var btn   = document.getElementById('confirmBtn');
+  var errEl = document.getElementById('confirmErr');
+  btn.disabled = true;
+  btn.textContent = 'Booking…';
+
+  var meta = { service: s.label, phone: WIZ.phone };
+  Object.keys(WIZ.extra).forEach(function(k){ meta[k] = WIZ.extra[k].value; });
+  if(WIZ.notes) meta.notes = WIZ.notes;
+
+  fetch('/api/book',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      start:       CAL.selTime,
+      eventTypeId: CAL.eventTypeId,
+      attendee:    { name:WIZ.name, email:WIZ.email, timeZone:'America/New_York', language:'en' },
+      metadata:    meta
+    })
+  })
+  .then(function(r){ return r.json().then(function(d){ return {status:r.status,data:d}; }); })
+  .then(function(res){
+    if(res.status >= 200 && res.status < 300){
+      showSuccess(s, WIZ.name, CAL.selTime);
+    } else {
+      var msg = (res.data && (res.data.message || (res.data.error && res.data.error.message)))
+        || 'Something went wrong. Please try again or call the office.';
+      errEl.textContent = msg;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = 'Confirm Booking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    }
+  })
+  .catch(function(){
+    errEl.textContent = 'Network error. Please call or email to book.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Confirm Booking';
+  });
+}
+
+/* ── Submit: by-arrangement → mailto ── */
+function submitMailto(){
+  var s = WIZ.svc;
+  var lines = ['Service: '+s.label,'Name: '+WIZ.name,'Phone: '+WIZ.phone,'Email: '+WIZ.email];
+  Object.keys(WIZ.extra).forEach(function(k){ lines.push(WIZ.extra[k].label+': '+WIZ.extra[k].value); });
+  if(WIZ.notes) lines.push('Notes: '+WIZ.notes);
+  var subj = encodeURIComponent('Appointment Request — '+s.label+' ('+WIZ.name+')');
+  var body = encodeURIComponent(lines.join('\n'));
+  window.location.href = 'mailto:imamsherifshehata@gmail.com?subject='+subj+'&body='+body;
+  showSuccess(s, WIZ.name, null);
+}
+
+/* ── Success state ── */
+function showSuccess(s, name, timeStr){
+  var timeMsg = timeStr
+    ? 'Your appointment for <strong>'+fmtDateTime(timeStr)+'</strong> is pending confirmation. You\'ll receive a confirmation email shortly.'
+    : 'Your request for <strong>'+esc(s.label)+'</strong> is on its way. The office will follow up within 1–2 business days to confirm your time.';
+  document.getElementById('cardBody').innerHTML =
+    '<div class="success-wrap">'
+      +'<div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>'
+      +'<h3>'+(timeStr ? 'You\'re booked, ' : 'Request sent, ')+esc(name.split(' ')[0])+'</h3>'
+      +'<p>'+timeMsg+'</p>'
+      +'<div class="success-contacts">'
+        +'<a class="btn btn-gold" href="tel:+15408425840">Call (540) 842-5840</a>'
+        +'<a class="btn btn-ghost" href="mailto:imamsherifshehata@gmail.com">Email the office</a>'
+      +'</div>'
+    +'</div>';
 }
 
 /* ── Calendar: load month availability ── */
@@ -634,7 +848,6 @@ function calLoadMonth(){
   var label = document.getElementById('calMLabel');
   if(label) label.textContent = MONTHS[CAL.month] + ' ' + CAL.year;
 
-  var firstDay = new Date(CAL.year, CAL.month, 1);
   var lastDay  = new Date(CAL.year, CAL.month + 1, 0);
   var startStr = pad4(CAL.year)+'-'+pad2(CAL.month+1)+'-01T00:00:00Z';
   var endStr   = pad4(CAL.year)+'-'+pad2(CAL.month+1)+'-'+pad2(lastDay.getDate())+'T23:59:59Z';
@@ -669,13 +882,13 @@ function calRenderGrid(){
   for(var i = 0; i < firstDow; i++) html += '<button class="cday pad" disabled></button>';
 
   for(var d = 1; d <= daysInMo; d++){
-    var ds   = pad4(CAL.year)+'-'+pad2(CAL.month+1)+'-'+pad2(d);
+    var ds    = pad4(CAL.year)+'-'+pad2(CAL.month+1)+'-'+pad2(d);
     var avail = !!(CAL.slots[ds] && CAL.slots[ds].length);
     var past  = ds < today;
     var cls   = 'cday';
-    if(ds === today)    cls += ' today';
-    if(avail && !past)  cls += ' avail';
-    if(ds === CAL.selDate) cls += ' sel';
+    if(ds === today)        cls += ' today';
+    if(avail && !past)      cls += ' avail';
+    if(ds === CAL.selDate)  cls += ' sel';
     var onclick = (avail && !past) ? ' onclick="calDayClick(\''+ds+'\')"' : '';
     html += '<button class="'+cls+'"'+onclick+' aria-label="'+MONTHS[CAL.month]+' '+d+'">'+d+'</button>';
   }
@@ -688,16 +901,18 @@ function calDayClick(dateStr){
   CAL.selDate = dateStr;
   CAL.selTime = null;
   calRenderGrid();
-  updateSelBadge(null);
 
-  var slots  = CAL.slots[dateStr] || [];
+  var btn = document.getElementById('calContBtn');
+  if(btn){ btn.disabled = true; }
+
+  var slots   = CAL.slots[dateStr] || [];
   var slotsEl = document.getElementById('calSlots');
   if(!slots.length){
     slotsEl.innerHTML = '<div class="cempty">No times available for this date.</div>';
     return;
   }
 
-  var html = '<div class="cslots-wrap"><div class="cslots-lbl">Available times</div><div class="cslots">';
+  var html = '<div class="cslots-wrap"><div class="cslots-lbl">Available times — Eastern (ET)</div><div class="cslots">';
   slots.forEach(function(slot){
     var t = slot.time;
     html += '<button class="cslot" onclick="calSlotClick(\''+t+'\')" data-time="'+t+'">'+fmtTime(t)+'</button>';
@@ -712,7 +927,10 @@ function calSlotClick(timeStr){
   document.querySelectorAll('.cslot').forEach(function(b){
     b.classList.toggle('sel', b.getAttribute('data-time') === timeStr);
   });
-  updateSelBadge(timeStr);
+  var btn = document.getElementById('calContBtn');
+  if(btn){ btn.disabled = false; btn.style.opacity = '1'; }
+  var errEl = document.getElementById('calErr');
+  if(errEl) errEl.style.display = 'none';
 }
 
 /* ── Calendar: navigate months ── */
@@ -720,142 +938,17 @@ function calPrevMonth(){
   CAL.month--;
   if(CAL.month < 0){ CAL.month = 11; CAL.year--; }
   CAL.selDate = null; CAL.selTime = null;
-  updateSelBadge(null);
+  var btn = document.getElementById('calContBtn');
+  if(btn){ btn.disabled = true; btn.style.opacity = ''; }
   calLoadMonth();
 }
 function calNextMonth(){
   CAL.month++;
   if(CAL.month > 11){ CAL.month = 0; CAL.year++; }
   CAL.selDate = null; CAL.selTime = null;
-  updateSelBadge(null);
+  var btn = document.getElementById('calContBtn');
+  if(btn){ btn.disabled = true; btn.style.opacity = ''; }
   calLoadMonth();
-}
-
-/* ── Update selected-time badge + submit button ── */
-function updateSelBadge(timeStr){
-  var badge  = document.getElementById('selBadge');
-  var btn    = document.getElementById('submitBtn');
-  if(!badge || !btn) return;
-  if(timeStr){
-    badge.style.display = 'flex';
-    document.getElementById('selBadgeText').textContent = fmtDateTime(timeStr);
-    btn.disabled = false;
-    btn.style.opacity = '1';
-    btn.innerHTML = 'Confirm Booking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-  } else {
-    badge.style.display = 'none';
-    btn.disabled = true;
-    btn.style.opacity = '.5';
-    btn.innerHTML = 'Select a time above';
-  }
-}
-
-/* ── Submit: schedulable (POST to /api/book) ── */
-function submitSchedulable(s){
-  var form  = document.getElementById('svcForm');
-  var errEl = document.getElementById('formErr');
-  var name  = form.name.value.trim();
-  var phone = form.phone.value.trim();
-  var email = form.email.value.trim();
-
-  if(!name || !phone || !email){
-    errEl.textContent = 'Please fill in your name, phone, and email.';
-    errEl.style.display = 'block';
-    return;
-  }
-  if(!CAL.selTime){
-    errEl.textContent = 'Please select a time from the calendar on the right.';
-    errEl.style.display = 'block';
-    return;
-  }
-  errEl.style.display = 'none';
-
-  var meta = { service: s.label, phone: phone };
-  (s.fields||[]).forEach(function(f){
-    var el = form[f.id];
-    if(el && el.value.trim()) meta[f.id] = el.value.trim();
-  });
-  if(form.notes && form.notes.value.trim()) meta.notes = form.notes.value.trim();
-
-  var btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Booking…';
-
-  fetch('/api/book', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      start:        CAL.selTime,
-      eventTypeId:  CAL.eventTypeId,
-      attendee: {
-        name:       name,
-        email:      email,
-        timeZone:   'America/New_York',
-        language:   'en'
-      },
-      metadata: meta
-    })
-  })
-  .then(function(r){ return r.json().then(function(d){ return { status: r.status, data: d }; }); })
-  .then(function(res){
-    if(res.status >= 200 && res.status < 300){
-      showSuccess(s, name, CAL.selTime);
-    } else {
-      var msg = (res.data && (res.data.message || (res.data.error && res.data.error.message))) || 'Something went wrong. Please try again or call the office.';
-      errEl.textContent = msg;
-      errEl.style.display = 'block';
-      btn.disabled = false;
-      btn.innerHTML = 'Confirm Booking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-    }
-  })
-  .catch(function(){
-    errEl.textContent = 'Network error. Please call or email to book.';
-    errEl.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = 'Confirm Booking';
-  });
-}
-
-/* ── Submit: by-arrangement (mailto) ── */
-function submitMailto(s){
-  var form  = document.getElementById('svcForm');
-  var errEl = document.getElementById('formErr');
-  var name  = form.name.value.trim();
-  var phone = form.phone.value.trim();
-  var email = form.email.value.trim();
-  if(!name || !phone || !email){
-    errEl.textContent = 'Please fill in your name, phone, and email.';
-    errEl.style.display = 'block';
-    return;
-  }
-  errEl.style.display = 'none';
-  var lines = ['Service: '+s.label, 'Name: '+name, 'Phone: '+phone, 'Email: '+email];
-  (s.fields||[]).forEach(function(f){
-    var val = form[f.id] ? form[f.id].value.trim() : '';
-    if(val) lines.push(f.label+': '+val);
-  });
-  if(form.notes && form.notes.value.trim()) lines.push('Notes: '+form.notes.value.trim());
-  var subj = encodeURIComponent('Appointment Request — '+s.label+' ('+name+')');
-  var body = encodeURIComponent(lines.join('\n'));
-  window.location.href = 'mailto:imamsherifshehata@gmail.com?subject='+subj+'&body='+body;
-  showSuccess(s, name, null);
-}
-
-/* ── Success state ── */
-function showSuccess(s, name, timeStr){
-  var timeMsg = timeStr
-    ? 'Your appointment for <strong>'+fmtDateTime(timeStr)+'</strong> is pending confirmation. You\'ll receive a confirmation email shortly.'
-    : 'Your request for <strong>'+s.label+'</strong> is on its way. The office will follow up within 1–2 business days to confirm your time.';
-  document.getElementById('cardBody').innerHTML =
-    '<div class="success-wrap">'
-      +'<div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>'
-      +'<h3>'+(timeStr ? 'You\'re booked, ' : 'Request sent, ')+name.split(' ')[0]+'</h3>'
-      +'<p>'+timeMsg+'</p>'
-      +'<div class="success-contacts">'
-        +'<a class="btn btn-gold" href="tel:+15408425840">Call (540) 842-5840</a>'
-        +'<a class="btn btn-ghost" href="mailto:imamsherifshehata@gmail.com">Email the office</a>'
-      +'</div>'
-    +'</div>';
 }
 
 /* ── Helpers ── */
@@ -866,8 +959,9 @@ function fmtTime(iso){
   return new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}).format(new Date(iso));
 }
 function fmtDateTime(iso){
-  return new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}).format(new Date(iso));
+  return new Intl.DateTimeFormat('en-US',{weekday:'short',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}).format(new Date(iso));
 }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 /* ── Init ── */
 buildChips();
