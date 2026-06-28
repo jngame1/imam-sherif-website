@@ -380,10 +380,11 @@ var SVC = [
   },
   {
     id:'family', label:'Marriage & Family Counseling', group:'counsel',
-    desc:'Confidential support for marital or family matters.', len:'45–60 min',
+    desc:'Confidential support for marital or family matters. Accommodations are required — please request at least 45–60 days in advance.', len:'45–60 min',
     icon:'family',
     fields:[
       {id:'attending', label:'Who will be attending', type:'text', req:true, hint:'e.g. "Myself" or "Myself and spouse"'},
+      {id:'prefdate', label:'Preferred date range', type:'text', req:false, hint:'e.g. "Mid-March" or "Anytime after April 1"'},
       {id:'topic', label:'Brief description', type:'textarea', req:false, hint:'Optional — helps the Imam prepare. All information is strictly confidential.'}
     ]
   },
@@ -515,7 +516,6 @@ function renderForm(s){
 
   body.innerHTML =
     '<div class="form-wrap">'
-      /* form side */
       +'<div class="form-side">'
         +'<h4>Your details</h4>'
         +'<p class="form-sub">Fill in the fields below and the office will reach out to confirm your time.</p>'
