@@ -9,9 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   Imam Sherif — shared styles (mirrored from index.html)
-   ============================================================ */
 :root{
   --green:#103D31; --green-2:#1B5C49; --green-soft:#E6EFE9;
   --sand:#F5EFE2; --sand-2:#EFE7D5; --cream:#FCF9F1;
@@ -23,12 +20,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--sand);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.08;color:var(--green)}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.08;color:var(--green)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .eyebrow{font-family:'Mulish';font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);display:inline-block}
-.center{text-align:center}
 .btn{font-family:'Mulish';font-weight:700;font-size:.92rem;letter-spacing:.02em;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;border:none;padding:.85rem 1.6rem;border-radius:999px;transition:.25s ease}
 .btn svg{width:16px;height:16px}
 .btn-gold{background:var(--gold);color:#241c06}
@@ -38,12 +34,11 @@ img{max-width:100%;display:block}
 .btn-light{background:transparent;color:var(--sand);border:1.5px solid rgba(245,239,226,.4)}
 .btn-light:hover{background:var(--sand);color:var(--green)}
 
-/* star pattern */
 .stars{position:absolute;inset:0;opacity:.06;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23103D31' stroke-width='1.1'%3E%3Cpath d='M40 6 49 31 74 40 49 49 40 74 31 49 6 40 31 31z'/%3E%3Cpath d='M40 16 46 34 64 40 46 46 40 64 34 46 16 40 34 34z'/%3E%3C/g%3E%3C/svg%3E")}
 .stars.gold{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23BE9B4E' stroke-width='1.1'%3E%3Cpath d='M40 6 49 31 74 40 49 49 40 74 31 49 6 40 31 31z'/%3E%3Cpath d='M40 16 46 34 64 40 46 46 40 64 34 46 16 40 34 34z'/%3E%3C/g%3E%3C/svg%3E")}
 
-/* ---------- nav ---------- */
+/* nav */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--maxw);margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px}
@@ -57,52 +52,97 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);bac
 .nav-links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer}
 
-/* ---------- page hero ---------- */
+/* page hero */
 .phero{background:var(--green);position:relative;overflow:hidden;padding:80px 0 60px}
 .phero-in{position:relative;max-width:var(--maxw);margin:0 auto;padding:0 28px;text-align:center}
 .phero .eyebrow{color:var(--gold)}
 .phero h1{color:var(--sand);font-size:clamp(2.4rem,5vw,3.6rem);margin:.5rem auto .7rem}
 .phero p{color:#cdd9d2;max-width:52ch;margin:0 auto;font-size:1.08rem}
 
-/* ---------- service selector ---------- */
-.svc-select{background:var(--sand-2);padding:56px 0}
-.svc-select .sec-head{max-width:640px;margin:0 auto 36px;text-align:center}
+/* service selector */
+.svc-select{background:var(--sand-2);padding:52px 0 44px}
+.svc-select .sec-head{max-width:640px;margin:0 auto 32px;text-align:center}
 .svc-select .sec-head h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin:.4rem 0 .7rem}
 .svc-select .sec-head p{color:var(--ink-soft);font-size:1rem}
-.service-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:10px}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-weight:600;font-size:.86rem;color:var(--ink);transition:.2s}
-.chip svg{width:15px;height:15px;color:var(--gold-d);flex:none}
+
+/* chip groups */
+.chip-group{margin-bottom:20px}
+.chip-group-label{font-weight:800;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px;display:flex;align-items:center;gap:8px;justify-content:center}
+.chip-group-label::before,.chip-group-label::after{content:"";height:1px;width:32px;background:var(--line)}
+.chip-group-label.gold{color:var(--gold-d)}
+.chip-group-label.gold::before,.chip-group-label.gold::after{background:rgba(190,155,78,.3)}
+.chips-row{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-weight:600;font-size:.86rem;color:var(--ink);transition:.2s;position:relative}
+.chip svg{width:15px;height:15px;color:var(--gold-d);flex:none;transition:.2s}
 .chip:hover{border-color:var(--gold);color:var(--green)}
 .chip.active{background:var(--green);color:var(--gold);border-color:var(--green)}
 .chip.active svg{color:var(--gold)}
+.chip.fundraising{border-color:rgba(190,155,78,.5)}
+.chip.fundraising.active{background:var(--gold-d);border-color:var(--gold-d);color:#fff}
 
-/* ---------- booking embed area ---------- */
-.booking-section{background:var(--cream);padding:56px 0 80px}
-.book-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;max-width:860px;margin:0 auto}
-.book-card-head{background:var(--green);padding:26px 36px;display:flex;align-items:center;gap:18px;position:relative;overflow:hidden}
-.book-card-head .stars{opacity:.06}
-.book-card-head .bc-info{position:relative}
-.book-card-head h3{color:var(--gold);font-size:1.6rem;line-height:1.1}
-.book-card-head p{color:#cdd9d2;font-size:.9rem;margin-top:4px}
-.book-card-head .bc-badge{position:relative;background:rgba(190,155,78,.2);border:1px solid rgba(190,155,78,.4);border-radius:10px;padding:10px 14px;flex:none;text-align:center;min-width:80px}
-.book-card-head .bc-badge svg{width:28px;height:28px;color:var(--gold);display:block;margin:0 auto 4px}
-.book-card-head .bc-badge span{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
-.book-embed-body{padding:0}
+/* booking card */
+.booking-section{background:var(--cream);padding:48px 0 80px}
+.book-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;max-width:900px;margin:0 auto}
+.book-card-head{background:var(--green);padding:24px 32px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+.book-card-head .stars{opacity:.07}
+.bc-badge{position:relative;background:rgba(190,155,78,.18);border:1px solid rgba(190,155,78,.38);border-radius:10px;padding:10px 14px;flex:none;text-align:center;min-width:72px}
+.bc-badge svg{width:26px;height:26px;color:var(--gold);display:block;margin:0 auto 4px}
+.bc-badge span{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.bc-info{position:relative;flex:1}
+.bc-info h3{color:var(--gold);font-size:1.55rem;line-height:1.1}
+.bc-info p{color:#cdd9d2;font-size:.88rem;margin-top:3px}
+.bc-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(190,155,78,.22);border:1px solid rgba(190,155,78,.4);border-radius:999px;padding:3px 10px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+.bc-tag svg{width:10px;height:10px}
+.book-card-body{padding:0}
 
-/* Cal embed container */
+/* form layout */
+.form-wrap{display:grid;grid-template-columns:1.1fr .9fr;min-height:480px}
+.form-side{padding:36px 32px;border-right:1px solid var(--line)}
+.form-side h4{font-family:'Cormorant Garamond';font-size:1.4rem;color:var(--green);margin-bottom:4px}
+.form-side .form-sub{color:var(--ink-soft);font-size:.88rem;margin-bottom:24px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.field label{font-weight:700;font-size:.78rem;letter-spacing:.04em;color:var(--ink);text-transform:uppercase}
+.field label .opt{font-weight:400;color:var(--ink-soft);text-transform:none;letter-spacing:0}
+.field input,.field select,.field textarea{font-family:'Mulish';font-size:.93rem;color:var(--ink);background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;transition:.2s;outline:none;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);background:#fff}
+.field textarea{resize:vertical;min-height:80px;line-height:1.5}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C665F' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-actions{display:flex;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap}
+.form-actions .btn{padding:.8rem 1.4rem}
+.form-note{font-size:.78rem;color:var(--ink-soft)}
+
+/* right panel */
+.info-side{padding:36px 28px;background:var(--cream);display:flex;flex-direction:column;gap:0}
+.info-side h4{font-family:'Cormorant Garamond';font-size:1.3rem;color:var(--green);margin-bottom:16px}
+.next-steps{list-style:none;margin-bottom:26px}
+.next-steps li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.88rem;color:var(--ink-soft)}
+.next-steps li:last-child{border:none}
+.next-steps .ns-num{width:22px;height:22px;border-radius:50%;background:var(--green);color:var(--gold);font-size:.7rem;font-weight:800;display:grid;place-items:center;flex:none;margin-top:1px}
+.divider{height:1px;background:var(--line);margin:18px 0}
+.direct-contact{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.dc-link{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:.2s}
+.dc-link:hover{border-color:var(--gold);transform:translateX(3px)}
+.dc-link .dc-ic{width:36px;height:36px;border-radius:9px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);flex:none}
+.dc-link .dc-ic svg{width:17px;height:17px}
+.dc-link b{display:block;font-size:.88rem;font-weight:700;color:var(--green)}
+.dc-link span{font-size:.78rem;color:var(--ink-soft)}
+.hours-note{font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
+.hours-note svg{width:13px;height:13px;color:var(--gold-d);flex:none}
+
+/* success state */
+.success-wrap{padding:56px 40px;text-align:center}
+.success-icon{width:72px;height:72px;border-radius:20px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);margin:0 auto 20px}
+.success-icon svg{width:36px;height:36px}
+.success-wrap h3{font-size:2rem;margin-bottom:10px}
+.success-wrap p{color:var(--ink-soft);max-width:42ch;margin:0 auto 24px;font-size:.97rem}
+.success-contacts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+
+/* Cal embed */
 #cal-inline-wrap{width:100%;min-height:660px;background:#fff}
 #cal-inline-wrap iframe{border:0;display:block}
 
-/* Setup placeholder */
-.setup-placeholder{padding:60px 36px;text-align:center}
-.setup-placeholder .sp-icon{width:72px;height:72px;border-radius:18px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);margin:0 auto 22px}
-.setup-placeholder .sp-icon svg{width:36px;height:36px}
-.setup-placeholder h3{font-size:1.9rem;margin-bottom:10px}
-.setup-placeholder p{color:var(--ink-soft);max-width:44ch;margin:0 auto 6px;font-size:.97rem}
-.setup-placeholder .sp-note{font-size:.82rem;color:var(--ink-soft);margin-top:4px}
-.setup-placeholder .sp-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-
-/* ---------- info strip ---------- */
+/* info strip */
 .info-strip{background:var(--sand);padding:56px 0}
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .info-card{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:28px 24px;display:flex;gap:16px;align-items:flex-start}
@@ -112,7 +152,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);bac
 .info-card p{font-size:.88rem;color:var(--ink-soft);line-height:1.5}
 .info-card a{color:var(--green);font-weight:600}
 
-/* ---------- footer ---------- */
+/* footer */
 footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
 .foot-in{position:relative;max-width:var(--maxw);margin:0 auto;padding:60px 28px 28px;display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:40px}
 .foot-in h4{font-family:'Cormorant Garamond';color:var(--sand);font-size:1.4rem;margin-bottom:14px}
@@ -129,7 +169,7 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
 .reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
-/* mobile menu */
+/* mobile */
 @media(max-width:1000px){
   .nav-links{display:none}
   .nav-toggle{display:block}
@@ -139,15 +179,18 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
   header.nav.open .nav-links a.on::after{display:none}
   header.nav.open .nav-links a.btn{margin-top:12px;justify-content:center;background:var(--gold);color:#241c06}
 }
-@media(max-width:880px){
+@media(max-width:760px){
+  .form-wrap{grid-template-columns:1fr}
+  .form-side{border-right:none;border-bottom:1px solid var(--line)}
   .info-grid{grid-template-columns:1fr}
   .foot-in{grid-template-columns:1fr;gap:28px}
-  .book-card-head{flex-direction:column;align-items:flex-start;gap:14px}
-  .service-chips{gap:8px}
+  .book-card-head{flex-direction:column;align-items:flex-start;gap:12px}
+  .form-grid-2{grid-template-columns:1fr}
 }
 @media(max-width:520px){
-  .service-chips{gap:6px}
+  .chips-row{gap:7px}
   .chip{font-size:.8rem;padding:8px 14px}
+  .success-contacts{flex-direction:column;align-items:center}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -157,7 +200,7 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <header class="nav" id="siteNav">
   <div class="nav-in">
     <a href="index.html" class="brand">
@@ -170,11 +213,11 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
     </a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="index.html#about">About Us</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#imam">Get to Know the Imam</a>
-      <a href="index.html#visit">Where to Find Us</a>
-      <a href="index.html#contact">Contact Us</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="imam.html">Get to Know the Imam</a>
+      <a href="visit.html">Where to Find Us</a>
+      <a href="contact.html">Contact Us</a>
       <a href="book.html" class="btn btn-gold on" style="padding:.6rem 1.2rem">Book a Meeting</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
@@ -183,31 +226,40 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
   </div>
 </header>
 
-<!-- ===== PAGE HERO ===== -->
+<!-- HERO -->
 <div class="phero">
   <div class="stars gold"></div>
   <div class="phero-in">
     <span class="eyebrow">Schedule a meeting</span>
     <h1>Book an Appointment</h1>
-    <p>Reserve a private time with Imam Sherif for counseling, guidance, a nikah, ruqya, or a question of faith — at a time that works for you.</p>
+    <p>Reserve private time with Imam Sherif. Select a service, fill in a few details, and the office will confirm your time.</p>
   </div>
 </div>
 
-<!-- ===== SERVICE SELECTOR ===== -->
+<!-- SERVICE SELECTOR -->
 <section class="svc-select">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">What brings you in?</span>
       <h2>Choose a service</h2>
-      <p>Select the type of meeting you need — this helps Imam Sherif prepare for your time together.</p>
+      <p>Select what you need — this helps Imam Sherif prepare for your time together.</p>
     </div>
-    <div class="service-chips reveal" id="chipRow">
-      <!-- populated by JS -->
+
+    <!-- Counsel & Guidance -->
+    <div class="chip-group">
+      <div class="chip-group-label">Counsel &amp; Guidance</div>
+      <div class="chips-row" id="chipsCounsel"></div>
+    </div>
+
+    <!-- Fundraising / Special Events -->
+    <div class="chip-group">
+      <div class="chip-group-label gold">Fundraising &amp; Special Events</div>
+      <div class="chips-row" id="chipsFund"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== CAL.COM BOOKING EMBED ===== -->
+<!-- BOOKING CARD -->
 <section class="booking-section">
   <div class="wrap">
     <div class="book-card reveal">
@@ -215,48 +267,50 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
         <div class="stars gold"></div>
         <div class="bc-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          <span>Booking</span>
+          <span>Request</span>
         </div>
         <div class="bc-info">
           <h3 id="cardTitle">Select a service above</h3>
-          <p id="cardSub">Your chosen service will appear here once you select one.</p>
+          <p id="cardSub">Your chosen service will appear here.</p>
+          <div id="cardTag" style="display:none" class="bc-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.2L21 9l-5 4.2L17.5 20 12 16.3 6.5 20 8 13.2 3 9l6.6-.8L12 2z" fill="currentColor" stroke="none"/></svg>
+            Fundraising service
+          </div>
         </div>
       </div>
-      <div class="book-embed-body" id="embedBody">
-        <!-- Cal.com inline embed or fallback injected here -->
+      <div class="book-card-body" id="cardBody">
+        <!-- injected by JS -->
+        <div style="padding:64px 36px;text-align:center;color:var(--ink-soft);font-size:.95rem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40" style="margin:0 auto 14px;color:var(--gold-d)"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <p>Select a service above to continue.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== INFO STRIP ===== -->
+<!-- INFO STRIP -->
 <section class="info-strip">
   <div class="wrap">
     <div class="info-grid">
       <div class="info-card reveal">
-        <div class="ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        </div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div>
           <h4>Office Hours</h4>
           <p>By appointment, Sunday through Thursday. Friday is reserved for Jummah prayer.</p>
         </div>
       </div>
       <div class="info-card reveal">
-        <div class="ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div>
           <h4>Location</h4>
           <p>2604 Richmond Highway<br>Stafford, Virginia 22554<br><a href="https://www.google.com/maps/dir/?api=1&destination=2604%20Richmond%20Highway%2C%20Stafford%2C%20VA%2022554" target="_blank" rel="noopener">Get directions &rarr;</a></p>
         </div>
       </div>
       <div class="info-card reveal">
-        <div class="ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
-        </div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
         <div>
-          <h4>Need to reach us?</h4>
+          <h4>Prefer to call?</h4>
           <p><a href="tel:+15408425840">(540) 842-5840</a><br><a href="mailto:imamsherifshehata@gmail.com">imamsherifshehata@gmail.com</a></p>
         </div>
       </div>
@@ -264,7 +318,7 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer>
   <div class="stars gold"></div>
   <div class="foot-in">
@@ -279,19 +333,17 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
       </div>
       <p>Private counsel and guidance for the community of Stafford, Virginia — and chaplain to Stafford Fire &amp; Rescue.</p>
       <div class="socials">
-        <a href="https://www.instagram.com/imamsherifshehata" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/share/1bqJWBLQT2/" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.12 7.5H17V4.6c-.32-.04-1.44-.14-2.74-.14-2.71 0-4.57 1.66-4.57 4.7V11H7v3.25h2.69V22h3.3v-7.75h2.58L16 11h-3.01V9.49c0-.94.25-1.99 1.13-1.99z"/></svg></a>
-        <a href="https://www.tiktok.com/@sherifabdallashehata" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 1.8 3.8 4 4v3c-1.5 0-2.9-.4-4-1.1V16a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.1a2.8 2.8 0 102 2.7V3z"/></svg></a>
+        <a href="https://www.instagram.com/imamsherifshehata" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/share/1bqJWBLQT2/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.12 7.5H17V4.6c-.32-.04-1.44-.14-2.74-.14-2.71 0-4.57 1.66-4.57 4.7V11H7v3.25h2.69V22h3.3v-7.75h2.58L16 11h-3.01V9.49c0-.94.25-1.99 1.13-1.99z"/></svg></a>
+        <a href="https://www.tiktok.com/@sherifabdallashehata" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 1.8 3.8 4 4v3c-1.5 0-2.9-.4-4-1.1V16a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.1a2.8 2.8 0 102 2.7V3z"/></svg></a>
       </div>
     </div>
     <div>
       <h4>Explore</h4>
-      <a href="index.html#about">About Us</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#imam">Get to Know the Imam</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="imam.html">Get to Know the Imam</a>
       <a href="book.html">Book a meeting</a>
     </div>
     <div>
@@ -306,184 +358,264 @@ footer{background:var(--green);color:#cdd9d2;position:relative;overflow:hidden}
 
 <script>
 /* ============================================================
-   CONFIGURATION
-   ============================================================
-   When you have Cal.com set up:
-
-   Option A — single event type (simplest):
-     Set CAL_LINK to "username/meeting-slug"
-     Leave CAL_PER_SERVICE empty {}
-
-   Option B — one event type per service:
-     Leave CAL_LINK blank
-     Set CAL_PER_SERVICE keys to service IDs below
-     e.g. { nikah: "imam-sherif/nikah", general: "imam-sherif/general-guidance" }
-
-   Cal.com connects to Google Calendar automatically once the
-   Google Calendar integration is enabled in the Cal.com dashboard.
+   CAL.COM CONFIG — set CAL_LINK once you have the account
+   e.g. CAL_LINK = "imam-sherif/meeting"
    ============================================================ */
-var CAL_LINK = "";          /* e.g. "imam-sherif/meeting" */
-var CAL_PER_SERVICE = {};   /* e.g. { nikah: "imam-sherif/nikah", general: "imam-sherif/general" } */
+var CAL_LINK = '';
+var CAL_PER_SERVICE = {};
 
-/* Service definitions */
+/* ============================================================
+   SERVICE DEFINITIONS
+   fields: [{id, label, type, opts (for select), req, hint}]
+   tag: 'fundraising' = shown under Fundraising group
+   ============================================================ */
 var SVC = [
-  { id:'nikah',      label:'Nikah / Wedding',            desc:'Arrange and officiate your marriage ceremony.',              len:'By request', icon:'star' },
-  { id:'ruqya',      label:'Ruqya',                      desc:'Spiritual healing through recitation of the Quran.',         len:'30–45 min',  icon:'quran' },
-  { id:'premarital', label:'Premarital Counseling',      desc:'Guidance for couples preparing for marriage.',               len:'45–60 min',  icon:'ring' },
-  { id:'family',     label:'Marriage & Family',          desc:'Confidential support for marital or family matters.',        len:'45–60 min',  icon:'family' },
-  { id:'convert',    label:'New Muslim Support',          desc:'Mentorship and help for those new to Islam.',               len:'30–45 min',  icon:'heart' },
-  { id:'speaking',   label:'Speaking Request',           desc:'Invite the Imam to speak at your event.',                   len:'By request', icon:'mic' },
-  { id:'general',    label:'General Guidance',           desc:'A question of faith, practice, or a personal matter.',      len:'20–30 min',  icon:'sun' }
+  {
+    id:'ruqya', label:'Ruqya', group:'counsel',
+    desc:'Spiritual healing and protection through recitation of the Quran.', len:'30–45 min',
+    icon:'quran',
+    fields:[
+      {id:'concern', label:'Brief description', type:'textarea', req:false, hint:'Optional — share what brings you in so Imam Sherif can prepare.'}
+    ]
+  },
+  {
+    id:'family', label:'Marriage & Family Counseling', group:'counsel',
+    desc:'Confidential support for marital or family matters.', len:'45–60 min',
+    icon:'family',
+    fields:[
+      {id:'attending', label:'Who will be attending', type:'text', req:true, hint:'e.g. "Myself" or "Myself and spouse"'},
+      {id:'topic', label:'Brief description', type:'textarea', req:false, hint:'Optional — helps the Imam prepare. All information is strictly confidential.'}
+    ]
+  },
+  {
+    id:'convert', label:'New Muslim Support', group:'counsel',
+    desc:'Mentorship and guidance for those new to or exploring Islam.', len:'30–45 min',
+    icon:'heart',
+    fields:[
+      {id:'background', label:'How can we help you?', type:'textarea', req:true, hint:'Tell us a little about where you are and what you are looking for.'}
+    ]
+  },
+  {
+    id:'home', label:'Home Visit', group:'counsel',
+    desc:'Imam Sherif visits you at home — for the elderly, ill, or those unable to travel.', len:'By arrangement',
+    icon:'home',
+    fields:[
+      {id:'address', label:'Visit address', type:'text', req:true, hint:'Full address including apartment number if applicable.'},
+      {id:'reason', label:'Reason for visit', type:'textarea', req:true, hint:'Brief description of the purpose of the visit.'}
+    ]
+  },
+  {
+    id:'general', label:'General Guidance', group:'counsel',
+    desc:'A question of faith, practice, or something on your heart. All are welcome.', len:'20–30 min',
+    icon:'sun',
+    fields:[
+      {id:'topic', label:'Topic or question', type:'textarea', req:false, hint:'Optional — share what you would like to discuss.'}
+    ]
+  },
+  {
+    id:'nikah', label:'Nikah / Wedding Ceremony', group:'fundraising',
+    desc:'Officiate your marriage ceremony in accordance with Islamic tradition.', len:'By arrangement',
+    icon:'star',
+    fields:[
+      {id:'bride', label:"Bride's full name", type:'text', req:true},
+      {id:'groom', label:"Groom's full name", type:'text', req:true},
+      {id:'wdate', label:'Proposed wedding date', type:'date', req:false},
+      {id:'venue', label:'Venue / location', type:'text', req:false, hint:'City or venue name — can be confirmed later.'},
+      {id:'size', label:'Approximate guest count', type:'text', req:false}
+    ]
+  },
+  {
+    id:'speaking', label:'Speaking Request', group:'fundraising',
+    desc:'Invite Imam Sherif to speak at your event, masjid, school, or organization.', len:'By arrangement',
+    icon:'mic',
+    fields:[
+      {id:'org', label:'Organization / event name', type:'text', req:true},
+      {id:'edate', label:'Event date', type:'date', req:false},
+      {id:'etype', label:'Event type', type:'select', req:true,
+        opts:['Masjid / Islamic event','School or university','Interfaith / community event','Fundraiser / gala','Corporate or government event','Other']},
+      {id:'topic', label:'Requested topic', type:'text', req:false, hint:'e.g. Islam and community, chaplaincy, interfaith dialogue'},
+      {id:'audience', label:'Expected audience size', type:'text', req:false}
+    ]
+  }
 ];
 
 var ICONS = {
-  ring:   '<circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/>',
   family: '<circle cx="7" cy="6" r="3"/><circle cx="17" cy="6" r="3"/><path d="M2 22c0-4 2.2-7 5-7M22 22c0-4-2.2-7-5-7M12 22v-6"/><circle cx="12" cy="9" r="2.4"/>',
   heart:  '<path d="M12 21s-7-4.5-9.5-9C.7 8.5 2.5 4 6.5 4 9 4 12 7 12 7s3-3 5.5-3c4 0 5.8 4.5 4 8-2.5 4.5-9.5 9-9.5 9z"/>',
   mic:    '<rect x="8" y="2" width="8" height="13" rx="4"/><path d="M5 11a7 7 0 0014 0M12 18v4"/>',
   star:   '<path d="M12 2l2.4 6.2L21 9l-5 4.2L17.5 20 12 16.3 6.5 20 8 13.2 3 9l6.6-.8L12 2z"/>',
   sun:    '<circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4 4l2 2M18 18l2 2M1 12h3M20 12h3M4 20l2-2M18 6l2-2"/>',
-  quran:  '<path d="M12 6c-2-1.5-4.5-2-7-1.5v12c2.5-.5 5 0 7 1.5 2-1.5 4.5-2 7-1.5v-12c-2.5-.5-5 0-7 1.5z"/><path d="M12 6v12"/>'
+  quran:  '<path d="M12 6c-2-1.5-4.5-2-7-1.5v12c2.5-.5 5 0 7 1.5 2-1.5 4.5-2 7-1.5v-12c-2.5-.5-5 0-7 1.5z"/><path d="M12 6v12"/>',
+  home:   '<path d="M3 21V11l9-7 9 7v10M9 21v-6h6v6"/>'
 };
 
-var activeSvc = null;
-var calLoaded = false;
-
-/* Build chip row */
-var chipRow = document.getElementById('chipRow');
-SVC.forEach(function(s){
-  var chip = document.createElement('button');
-  chip.className = 'chip';
-  chip.setAttribute('data-id', s.id);
-  chip.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">'+ICONS[s.icon]+'</svg>'+s.label;
-  chip.onclick = function(){ selectService(s); };
-  chipRow.appendChild(chip);
-});
+/* build chip rows */
+function buildChips(){
+  var counsel = document.getElementById('chipsCounsel');
+  var fund = document.getElementById('chipsFund');
+  SVC.forEach(function(s){
+    var c = document.createElement('button');
+    c.className = 'chip' + (s.group==='fundraising' ? ' fundraising' : '');
+    c.setAttribute('data-id', s.id);
+    c.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15">'+ICONS[s.icon]+'</svg>' + s.label;
+    c.onclick = function(){ selectService(s); };
+    (s.group==='fundraising' ? fund : counsel).appendChild(c);
+  });
+}
 
 function selectService(s){
-  /* update chips */
   document.querySelectorAll('.chip').forEach(function(c){
-    c.classList.toggle('active', c.getAttribute('data-id') === s.id);
+    c.classList.toggle('active', c.getAttribute('data-id')===s.id);
   });
-  activeSvc = s;
-
-  /* update card header */
+  /* header */
   document.getElementById('cardTitle').textContent = s.label;
-  document.getElementById('cardSub').textContent = s.desc + (s.len !== 'By request' ? ' · ' + s.len : '');
-
-  /* scroll to embed */
+  document.getElementById('cardSub').textContent = s.desc + (s.len!=='By arrangement' ? ' · '+s.len : '');
+  var tag = document.getElementById('cardTag');
+  if(s.group==='fundraising'){ tag.style.display='inline-flex'; } else { tag.style.display='none'; }
+  /* scroll card into view */
   var card = document.querySelector('.book-card');
-  if(card){ setTimeout(function(){ card.scrollIntoView({behavior:'smooth', block:'start'}); }, 80); }
-
-  /* render embed */
-  renderEmbed(s);
+  if(card) setTimeout(function(){ card.scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
+  /* body */
+  var link = CAL_PER_SERVICE[s.id] || CAL_LINK;
+  if(link){ renderCal(link); } else { renderForm(s); }
 }
 
-function resolveCalLink(s){
-  if(CAL_PER_SERVICE[s.id]) return CAL_PER_SERVICE[s.id];
-  return CAL_LINK || null;
-}
-
-function renderEmbed(s){
-  var body = document.getElementById('embedBody');
-  var link = resolveCalLink(s);
-
-  if(link){
-    initCalIfNeeded(link, body);
-  } else {
-    showFallback(body, s);
-  }
-}
-
-function initCalIfNeeded(calLink, body){
-  /* Clear previous content */
-  body.innerHTML = '';
-  var wrap = document.createElement('div');
-  wrap.id = 'cal-inline-wrap';
-  body.appendChild(wrap);
-
+/* ---- Cal.com embed ---- */
+var calLoaded = false;
+function renderCal(calLink){
+  var body = document.getElementById('cardBody');
+  body.innerHTML = '<div id="cal-inline-wrap"></div>';
   if(!calLoaded){
     calLoaded = true;
-    (function(C,A,L){
-      let p=function(a,ar){a.q.push(ar);};
-      let d=C.document;
-      C.Cal=C.Cal||function(){
-        let cal=C.Cal;let ar=arguments;
-        if(!cal.loaded){
-          cal.ns={};cal.q=cal.q||[];
-          d.head.appendChild(d.createElement('script')).src=A;
-          cal.loaded=true;
-        }
-        if(ar[0]===L){
-          const api=function(){p(api,arguments);};
-          const ns=ar[1];api.q=api.q||[];
-          if(typeof ns==='string'){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,['initNamespace',ns]);}
-          else p(cal,ar);return;
-        }
-        p(cal,ar);
-      };
-    })(window,'https://app.cal.com/embed/embed.js','init');
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement('script')).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const ns=ar[1];api.q=api.q||[];if(typeof ns==='string'){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,['initNamespace',ns]);}else p(cal,ar);return;}p(cal,ar);};})(window,'https://app.cal.com/embed/embed.js','init');
     Cal('init',{origin:'https://cal.com'});
-    Cal('ui',{
-      theme:'light',
-      styles:{branding:{brandColor:'#103D31'}},
-      hideEventTypeDetails:false,
-      layout:'month_view'
-    });
+    Cal('ui',{theme:'light',styles:{branding:{brandColor:'#103D31'}},hideEventTypeDetails:false,layout:'month_view'});
   }
+  Cal('inline',{elementOrSelector:'#cal-inline-wrap',calLink:calLink,layout:'month_view'});
+}
 
-  Cal('inline',{
-    elementOrSelector:'#cal-inline-wrap',
-    calLink:calLink,
-    layout:'month_view'
+/* ---- Intake form ---- */
+function renderForm(s){
+  var body = document.getElementById('cardBody');
+
+  /* build service-specific fields HTML */
+  var extraFields = '';
+  (s.fields||[]).forEach(function(f){
+    var optLabel = f.req ? '' : ' <span class="opt">(optional)</span>';
+    var hint = f.hint ? '<span style="font-size:.75rem;color:var(--ink-soft);margin-top:3px">'+f.hint+'</span>' : '';
+    if(f.type==='textarea'){
+      extraFields += '<div class="field"><label>'+f.label+optLabel+'</label><textarea name="'+f.id+'" rows="3"'+(f.req?' required':'')+'></textarea>'+hint+'</div>';
+    } else if(f.type==='select'){
+      var opts = (f.opts||[]).map(function(o){ return '<option value="'+o+'">'+o+'</option>'; }).join('');
+      extraFields += '<div class="field"><label>'+f.label+optLabel+'</label><select name="'+f.id+'"'+(f.req?' required':'')+'><option value="">Select…</option>'+opts+'</select>'+hint+'</div>';
+    } else {
+      extraFields += '<div class="field"><label>'+f.label+optLabel+'</label><input type="'+f.type+'" name="'+f.id+'"'+(f.req?' required':'')+'/>'+hint+'</div>';
+    }
+  });
+
+  body.innerHTML =
+    '<div class="form-wrap">'
+      /* form side */
+      +'<div class="form-side">'
+        +'<h4>Your details</h4>'
+        +'<p class="form-sub">Fill in the fields below and the office will reach out to confirm your time.</p>'
+        +'<form id="svcForm" novalidate>'
+          +'<div class="form-grid-2">'
+            +'<div class="field"><label>Full name</label><input type="text" name="name" required placeholder="Your full name"/></div>'
+            +'<div class="field"><label>Phone number</label><input type="tel" name="phone" required placeholder="(___) ___-____"/></div>'
+          +'</div>'
+          +'<div class="field"><label>Email address</label><input type="email" name="email" required placeholder="you@example.com"/></div>'
+          + extraFields
+          +'<div class="field"><label>Additional notes <span class="opt">(optional)</span></label><textarea name="notes" rows="3" placeholder="Anything else you want Imam Sherif to know…"></textarea></div>'
+          +'<div class="form-actions">'
+            +'<button type="submit" class="btn btn-gold">Send Request <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>'
+            +'<span class="form-note" id="formErr" style="color:#c0392b;display:none"></span>'
+          +'</div>'
+        +'</form>'
+      +'</div>'
+      /* right panel */
+      +'<div class="info-side">'
+        +'<h4>What happens next</h4>'
+        +'<ol class="next-steps">'
+          +'<li><div class="ns-num">1</div><span>Submit your request using the form.</span></li>'
+          +'<li><div class="ns-num">2</div><span>The office reviews your request and contacts you within 1–2 business days.</span></li>'
+          +'<li><div class="ns-num">3</div><span>You receive a confirmed date and time — and can prepare for your meeting.</span></li>'
+        +'</ol>'
+        +'<div class="divider"></div>'
+        +'<p style="font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px">Or reach us directly</p>'
+        +'<div class="direct-contact">'
+          +'<a class="dc-link" href="tel:+15408425840">'
+            +'<div class="dc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>'
+            +'<div><b>Call</b><span>(540) 842-5840</span></div>'
+          +'</a>'
+          +'<a class="dc-link" href="mailto:imamsherifshehata@gmail.com">'
+            +'<div class="dc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>'
+            +'<div><b>Email</b><span>imamsherifshehata@gmail.com</span></div>'
+          +'</a>'
+        +'</div>'
+        +'<p class="hours-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Sunday–Thursday &middot; By appointment</p>'
+      +'</div>'
+    +'</div>';
+
+  /* form submit handler */
+  document.getElementById('svcForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errEl = document.getElementById('formErr');
+    /* basic validation */
+    var name = form.name.value.trim();
+    var phone = form.phone.value.trim();
+    var email = form.email.value.trim();
+    if(!name || !phone || !email){
+      errEl.textContent = 'Please fill in your name, phone, and email.';
+      errEl.style.display = 'block';
+      return;
+    }
+    errEl.style.display = 'none';
+    /* build email body */
+    var lines = ['Service: ' + s.label, 'Name: ' + name, 'Phone: ' + phone, 'Email: ' + email];
+    (s.fields||[]).forEach(function(f){
+      var val = form[f.id] ? form[f.id].value.trim() : '';
+      if(val) lines.push(f.label + ': ' + val);
+    });
+    var notes = form.notes.value.trim();
+    if(notes) lines.push('Notes: ' + notes);
+    var subject = encodeURIComponent('Appointment Request — ' + s.label + ' (' + name + ')');
+    var body = encodeURIComponent(lines.join('\n'));
+    window.location.href = 'mailto:imamsherifshehata@gmail.com?subject=' + subject + '&body=' + body;
+    /* show success */
+    showSuccess(s, name);
   });
 }
 
-function showFallback(body, s){
+function showSuccess(s, name){
+  var body = document.getElementById('cardBody');
   body.innerHTML =
-    '<div class="setup-placeholder">'
-      +'<div class="sp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>'
-      +'<h3>Online booking coming soon</h3>'
-      +'<p>Live scheduling for <strong>'+s.label+'</strong> is being connected to Imam Sherif\'s Google Calendar through Cal.com.</p>'
-      +'<p class="sp-note">In the meantime, please reach the office directly to set up a time.</p>'
-      +'<div class="sp-btns">'
-        +'<a class="btn btn-gold" href="tel:+15408425840"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>Call (540) 842-5840</a>'
+    '<div class="success-wrap">'
+      +'<div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>'
+      +'<h3>Request sent, '+(name.split(' ')[0])+'</h3>'
+      +'<p>Your request for <strong>'+s.label+'</strong> is on its way. The office will follow up within 1–2 business days to confirm your time.</p>'
+      +'<div class="success-contacts">'
+        +'<a class="btn btn-gold" href="tel:+15408425840">Call (540) 842-5840</a>'
         +'<a class="btn btn-ghost" href="mailto:imamsherifshehata@gmail.com">Email the office</a>'
       +'</div>'
+      +'<p style="font-size:.8rem;color:var(--ink-soft);margin-top:18px">Need to adjust anything? Reach out directly.</p>'
     +'</div>';
 }
 
-/* Auto-select first chip on load */
-(function(){
-  selectService(SVC[0]);
-})();
-
-/* Reveal on scroll */
+/* init */
+buildChips();
 (function(){
   var els = document.querySelectorAll('.reveal');
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:.12});
+  var io = new IntersectionObserver(function(ent){ ent.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} }); },{threshold:.12});
   els.forEach(function(el){ io.observe(el); });
 })();
-
-/* Mobile menu */
-var nav = document.getElementById('siteNav');
-var toggle = document.getElementById('navToggle');
+var nav = document.getElementById('siteNav'), toggle = document.getElementById('navToggle');
 if(toggle){
-  toggle.onclick = function(){
-    var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  };
-  document.querySelectorAll('.nav-links a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
-  });
+  toggle.onclick = function(){ var o=nav.classList.toggle('open'); toggle.setAttribute('aria-expanded',o?'true':'false'); };
+  document.querySelectorAll('.nav-links a').forEach(function(a){ a.addEventListener('click',function(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }); });
 }
-
-/* Footer year */
-var yr = document.getElementById('yr');
-if(yr) yr.textContent = new Date().getFullYear();
+document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
