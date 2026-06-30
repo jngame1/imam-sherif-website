@@ -136,6 +136,10 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,226,.88);bac
 .cf-label{font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);min-width:86px;flex:none;padding-top:2px}
 .cf-val{font-size:.9rem;color:var(--ink);line-height:1.5}
 
+/* policy / fee note */
+.svc-note{margin-top:16px;padding:12px 15px;background:rgba(190,155,78,.1);border:1.5px solid rgba(190,155,78,.38);border-radius:10px;font-size:.82rem;color:var(--ink-soft);line-height:1.65}
+.svc-note strong{color:var(--ink);font-weight:700}
+
 /* full-width calendar */
 .cal-full-head{margin-bottom:16px}
 .cal-full-head h4{font-family:'Cormorant Garamond';font-size:1.4rem;color:var(--green);margin-bottom:4px}
@@ -393,60 +397,97 @@ var CAL_EVENT_IDS = {
   speaking: 6142602
 };
 
-var SCHEDULABLE = { ruqya: 1, family: 1, convert: 1, general: 1 };
+var SCHEDULABLE = { ruqya: 1, family: 1 };
 
 var SVC = [
   {
     id:'ruqya', label:'Ruqya', group:'counsel',
-    desc:'Spiritual healing and protection through recitation of the Quran.', len:'30–45 min', icon:'quran',
-    fields:[{id:'concern',label:'Brief description',type:'textarea',req:false,hint:'Optional — share what brings you in so Imam Sherif can prepare.'}]
+    desc:'Spiritual healing and protection through recitation of the Quran. Appointments take place at Imam Sherif\'s office at Masjid Aliya, one person at a time.',
+    len:'Up to 1 hour', icon:'quran',
+    fields:[
+      {id:'concern',label:'What brings you in',type:'textarea',req:false,hint:'Optional — share what brings you in so Imam Sherif can prepare.'}
+    ],
+    svcNote:'<strong>Fee: $100</strong> — payment is required to confirm your appointment. Rescheduling is allowed up to 24 hours in advance. No-shows are not eligible for a refund. For ruqya at your home or another location, please choose "Home Visit" instead.'
   },
   {
     id:'family', label:'Marriage & Family Counseling', group:'counsel',
-    desc:'Confidential support for marital or family matters.', len:'45–60 min', icon:'family',
+    desc:'Confidential counseling for marriage, family, or individual matters at Imam Sherif\'s office at Masjid Aliya. Virtual sessions via Zoom are available upon request.',
+    len:'Up to 1 hour', icon:'family',
     fields:[
       {id:'attending',label:'Who will be attending',type:'text',req:true,hint:'e.g. "Myself" or "Myself and spouse"'},
-      {id:'topic',label:'Brief description',type:'textarea',req:false,hint:'Optional — helps the Imam prepare. All information is strictly confidential.'}
-    ]
+      {id:'virtual',label:'Session format',type:'select',req:false,opts:['In-person at Masjid Aliya','Virtual (Zoom)']},
+      {id:'topic',label:'Brief description',type:'textarea',req:false,hint:'Optional — all information is strictly confidential.'}
+    ],
+    svcNote:'<strong>Fee: $100</strong> — payment is required to confirm your appointment. Rescheduling is allowed up to 24 hours in advance. No-shows are not eligible for a refund. For counseling at your home or another location, please choose "Home Visit" instead.'
   },
   {
     id:'convert', label:'New Muslim Support', group:'counsel',
-    desc:'Mentorship and guidance for those new to or exploring Islam.', len:'30–45 min', icon:'heart',
-    fields:[{id:'background',label:'How can we help you?',type:'textarea',req:true,hint:'Tell us a little about where you are and what you are looking for.'}]
+    desc:'Welcome to Islam. If you would like to take the shahada, learn more about Islam, receive guidance, or simply ask a question — reach out and we will contact you shortly.',
+    len:'By arrangement', icon:'heart', noNotes:true,
+    fields:[
+      {id:'message',label:'Your message',type:'textarea',req:true,hint:'Tell us how we can help — there are no wrong questions.'}
+    ]
   },
   {
     id:'home', label:'Home Visit', group:'counsel',
-    desc:'Imam Sherif visits you at home — for the elderly, ill, or those unable to travel.', len:'By arrangement', icon:'home',
+    desc:'Imam Sherif visits you at home or another location — for counseling, ruqya, house blessings, dua at parties or events, and more. Pricing depends on type, distance, and length.',
+    len:'By arrangement', icon:'home', noNotes:true,
     fields:[
-      {id:'address',label:'Visit address',type:'text',req:true,hint:'Full address including apartment number if applicable.'},
-      {id:'reason',label:'Reason for visit',type:'textarea',req:true,hint:'Brief description of the purpose of the visit.'}
+      {id:'address',label:'Address or location of visit',type:'text',req:true,hint:'Full address including apartment number if applicable.'},
+      {id:'visit_type',label:'Type of visit',type:'select',req:true,opts:['Counseling','Ruqya','House blessing','Dua / event / party','Other']},
+      {id:'prefdate',label:'Preferred dates & times',type:'text',req:false,hint:'e.g. "Weekends in July after 2 PM"'},
+      {id:'duration',label:'Estimated length of visit',type:'text',req:false,hint:'e.g. "1–2 hours"'},
+      {id:'details',label:'Additional details',type:'textarea',req:false,hint:'Anything else that will help Imam Sherif prepare.'}
     ]
   },
   {
     id:'general', label:'General Guidance', group:'counsel',
-    desc:'A question of faith, practice, or something on your heart. All are welcome.', len:'20–30 min', icon:'sun',
-    fields:[{id:'topic',label:'Topic or question',type:'textarea',req:false,hint:'Optional — share what you would like to discuss.'}]
-  },
-  {
-    id:'nikah', label:'Nikah / Wedding Ceremony', group:'fundraising',
-    desc:'Officiate your marriage ceremony in accordance with Islamic tradition.', len:'By arrangement', icon:'star',
+    desc:'For any topic not listed above — a question of faith, a personal matter, or something on your heart. For time-sensitive needs like hospital visits or janazas, please call directly.',
+    len:'By arrangement', icon:'sun', noNotes:true,
     fields:[
-      {id:'bride',label:"Bride's full name",type:'text',req:true},
-      {id:'groom',label:"Groom's full name",type:'text',req:true},
-      {id:'wdate',label:'Proposed wedding date',type:'date',req:false},
-      {id:'venue',label:'Venue / location',type:'text',req:false,hint:'City or venue name — can be confirmed later.'},
-      {id:'size',label:'Approximate guest count',type:'text',req:false}
+      {id:'message',label:'Your message',type:'textarea',req:true,hint:'Share what you\'d like to discuss. For hospital visits or janazas, please call (540) 842-5840 directly.'}
     ]
   },
   {
+    id:'nikah', label:'Nikah / Wedding Ceremony', group:'fundraising',
+    desc:'Imam Sherif is authorized to perform weddings in Virginia. Recommended to schedule several months in advance. Premarital counseling is required prior to the ceremony.',
+    len:'By arrangement', icon:'star', noNotes:true,
+    fields:[
+      {id:'bride',label:"Bride's full name",type:'text',req:true},
+      {id:'groom',label:"Groom's full name",type:'text',req:true},
+      {id:'phones',label:'Phone number(s)',type:'text',req:true,hint:'Include both bride and groom numbers if available'},
+      {id:'nikah_date',label:'Preferred date or date range for nikah',type:'text',req:false,hint:'e.g. "October 2026" or "First weekend of November"'},
+      {id:'location',label:'Location of nikah',type:'text',req:false,hint:'Venue or city — can be confirmed later'},
+      {id:'counseling_pref',label:'Preferred dates for premarital counseling',type:'text',req:false,hint:'We will confirm availability with you'},
+      {id:'outside_va',label:'Will the nikah take place outside Virginia?',type:'select',req:false,opts:['No — within Virginia','Yes — another state','Yes — outside the DMV area (travel may apply)']},
+      {id:'details',label:'Additional information',type:'textarea',req:false,hint:'Guest count, venue details, any special notes.'}
+    ],
+    svcNote:'<strong>Cost: $500</strong> — paid in two installments: $200 to confirm the premarital counseling session, and $300 after counseling but prior to the nikah date. Nikah will not be performed until full payment is received. An invoice will be sent to your email after we review your request.<br>A photo of your marriage license must be sent prior to the nikah so your marriage contract can be prepared. If the nikah will take place outside Virginia, please note this so we can ensure the laws of that state are fulfilled.'
+  },
+  {
     id:'speaking', label:'Speaking Request', group:'fundraising',
-    desc:'Invite Imam Sherif to speak at your event, masjid, school, or organization.', len:'By arrangement', icon:'mic',
+    desc:'Invite Imam Sherif to speak at your event — masjid, school, interfaith gathering, fundraiser, corporate or government event. Dates well in advance are preferred.',
+    len:'By arrangement', icon:'mic', noNotes:true,
     fields:[
       {id:'org',label:'Organization / event name',type:'text',req:true},
-      {id:'edate',label:'Event date',type:'date',req:false},
-      {id:'etype',label:'Event type',type:'select',req:true,opts:['Masjid / Islamic event','School or university','Interfaith / community event','Fundraiser / gala','Corporate or government event','Other']},
+      {id:'etype',label:'Type of event',type:'select',req:true,opts:['Masjid / Islamic event','School or university','Interfaith / community event','Fundraiser / gala','Corporate or government event','Other']},
+      {id:'edate',label:'Requested date or date range',type:'text',req:false,hint:'e.g. "September 2026" — dates well in advance are preferred'},
+      {id:'location',label:'Location of event',type:'text',req:false,hint:'City, state, or venue'},
       {id:'topic',label:'Requested topic',type:'text',req:false,hint:'e.g. Islam and community, chaplaincy, interfaith dialogue'},
-      {id:'audience',label:'Expected audience size',type:'text',req:false}
+      {id:'audience',label:'Expected audience size',type:'text',req:false},
+      {id:'details',label:'Additional information',type:'textarea',req:false,hint:'Please include as much detail as possible so we can quote a price and confirm availability. Events outside the DMV area may require travel arrangements or an additional fee.'}
+    ]
+  },
+  {
+    id:'fundraising', label:'Fundraising Event', group:'fundraising',
+    desc:'Imam Sherif is available to lead fundraising events for your organization. Fees are based on a percentage of funds raised, plus travel for events outside the DMV area.',
+    len:'By arrangement', icon:'gift', noNotes:true,
+    fields:[
+      {id:'org',label:'Organization name',type:'text',req:true},
+      {id:'edate',label:'Requested date or date range',type:'text',req:false,hint:'e.g. "Fall 2026" — dates well in advance are preferred'},
+      {id:'location',label:'Location of event',type:'text',req:false,hint:'City, state, or venue'},
+      {id:'description',label:'Description of event',type:'textarea',req:true,hint:'Please include as much detail as possible so we can accurately quote a price and confirm availability.'},
+      {id:'details',label:'Additional information',type:'textarea',req:false,hint:'Events outside the DMV area may require travel arrangements or an additional travel fee.'}
     ]
   }
 ];
@@ -458,7 +499,8 @@ var ICONS = {
   star:   '<path d="M12 2l2.4 6.2L21 9l-5 4.2L17.5 20 12 16.3 6.5 20 8 13.2 3 9l6.6-.8L12 2z"/>',
   sun:    '<circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4 4l2 2M18 18l2 2M1 12h3M20 12h3M4 20l2-2M18 6l2-2"/>',
   quran:  '<path d="M12 6c-2-1.5-4.5-2-7-1.5v12c2.5-.5 5 0 7 1.5 2-1.5 4.5-2 7-1.5v-12c-2.5-.5-5 0-7 1.5z"/><path d="M12 6v12"/>',
-  home:   '<path d="M3 21V11l9-7 9 7v10M9 21v-6h6v6"/>'
+  home:   '<path d="M3 21V11l9-7 9 7v10M9 21v-6h6v6"/>',
+  gift:   '<polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5" rx="1"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>'
 };
 
 var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -569,7 +611,9 @@ function buildCalPanelHTML(){
 }
 
 function buildFormPanelHTML(s, hasBack){
-  var fieldsHTML = buildFieldsHTML(s.fields);
+  var fieldsHTML  = buildFieldsHTML(s.fields);
+  var notesHTML   = s.noNotes ? '' : '<div class="field"><label>Additional notes <span class="opt">(optional)</span></label><textarea name="notes" rows="3" placeholder="Anything else you\'d like Imam Sherif to know…"></textarea></div>';
+  var svcNoteHTML = s.svcNote ? '<div class="svc-note">'+s.svcNote+'</div>' : '';
   var submitLabel = WIZ.schedulable ? 'Review Booking' : 'Review Request';
   var timeBarHTML = hasBack
     ? '<div class="wiz-time-bar" id="wizTimeBar" style="display:none">'
@@ -594,7 +638,8 @@ function buildFormPanelHTML(s, hasBack){
       + '</div>'
       + '<div class="field"><label>Email address</label><input type="email" name="email" required placeholder="you@example.com"/></div>'
       + fieldsHTML
-      + '<div class="field"><label>Additional notes <span class="opt">(optional)</span></label><textarea name="notes" rows="3" placeholder="Anything else you\'d like Imam Sherif to know…"></textarea></div>'
+      + notesHTML
+      + svcNoteHTML
       + '<div class="wiz-nav">'
         + '<button type="submit" class="btn btn-gold">'+submitLabel+' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>'
         + backBtnHTML
